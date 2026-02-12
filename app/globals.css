@@ -1,0 +1,635 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #4A5565;
+  --evergreen: #1A4D3E;
+  --slate: #4A5565;
+  --white: #FFFFFF;
+  --light-gray: #F9FAFB;
+  --border: #E5E7EB;
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+}
+
+body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Form Styles */
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background: var(--evergreen);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #2a6b56;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--evergreen);
+  border: 2px solid var(--evergreen);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #f0fdf9;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--evergreen);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 77, 62, 0.1);
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* ========================================
+   Hero Text Gradient Animation
+   ======================================== */
+@keyframes text-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-gradient {
+  background-size: 300% 100%;
+  animation: text-gradient 4s ease infinite;
+}
+
+/* ========================================
+   Blog Card Entry Animation
+   ======================================== */
+@keyframes blogCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-card-animate {
+  animation: blogCardFadeIn 0.6s ease-out both;
+}
+
+/* ========================================
+   Blog Prose Enhancements
+   ======================================== */
+.blog-prose {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.blog-prose h2 {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose h3 {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.blog-prose blockquote {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.blog-prose table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #1A4D3E;
+}
+
+.blog-prose table td {
+  padding: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* ========================================
+   Speakable Answer Box
+   ======================================== */
+.speakable-answer {
+  position: relative;
+}
+
+.speakable-answer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1A4D3E, #10B981);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ========================================
+   Hide Scrollbar Utility
+   ======================================== */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   Font Utility Classes
+   ======================================== */
+.font-space,
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* ========================================
+   Killers Page — Headline Gradient
+   ======================================== */
+@keyframes killersGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.killers-headline-gradient {
+  background: linear-gradient(
+    270deg,
+    #ffffff 0%,
+    #94a3b8 20%,
+    #ffffff 40%,
+    #cbd5e1 60%,
+    #ffffff 80%,
+    #94a3b8 100%
+  );
+  background-size: 300% 100%;
+  animation: killersGradient 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.killers-headline-accent {
+  background: linear-gradient(
+    270deg,
+    #ef4444 0%,
+    #f59e0b 25%,
+    #ef4444 50%,
+    #dc2626 75%,
+    #f59e0b 100%
+  );
+  background-size: 300% 100%;
+  animation: killersGradient 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes killersUnderline {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.killers-underline {
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #ef4444, #dc2626);
+  background-size: 300% 100%;
+  animation: killersUnderline 3s ease infinite;
+}
+
+/* ========================================
+   Killers Page — Floating Particles
+   ======================================== */
+@keyframes killersFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+.killers-particle {
+  animation: killersFloat 8s ease-in-out infinite;
+}
+
+/* ========================================
+   Killers Page — Fee Bar Animation
+   ======================================== */
+@keyframes feeBarGrow {
+  from {
+    width: 0%;
+  }
+}
+
+.fee-bar-animate {
+  animation: feeBarGrow 1.2s ease-out both;
+}
+
+/* ========================================
+   Indexed Page — MASTER ANIMATION SYSTEM
+   ======================================== */
+
+/* ---- Gradient Text Shimmer ---- */
+@keyframes indexedGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.indexed-gradient-text {
+  background: linear-gradient(270deg, #1A4D3E 0%, #10B981 25%, #FFFFFF 50%, #10B981 75%, #1A4D3E 100%);
+  background-size: 400% 100%;
+  animation: indexedGradient 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Floating Orbs (parallax-like) ---- */
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25%      { transform: translate(60px, -50px) scale(1.15) rotate(5deg); }
+  50%      { transform: translate(-30px, -80px) scale(0.9) rotate(-3deg); }
+  75%      { transform: translate(40px, 20px) scale(1.08) rotate(2deg); }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25%      { transform: translate(-50px, 40px) scale(1.1) rotate(-4deg); }
+  50%      { transform: translate(30px, 60px) scale(0.95) rotate(6deg); }
+  75%      { transform: translate(-40px, -30px) scale(1.05) rotate(-2deg); }
+}
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -60px) scale(1.12); }
+  66%      { transform: translate(-50px, 30px) scale(0.88); }
+}
+
+.indexed-orb-1 { animation: orbDrift1 18s ease-in-out infinite; }
+.indexed-orb-2 { animation: orbDrift2 22s ease-in-out infinite; }
+.indexed-orb-3 { animation: orbDrift3 15s ease-in-out infinite; }
+
+/* ---- Hero 3D Perspective Container ---- */
+.indexed-hero-perspective {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* ---- Staggered Fade-Rise Entrance ---- */
+@keyframes fadeRise3D {
+  from {
+    opacity: 0;
+    transform: translateY(60px) translateZ(-50px) rotateX(8deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+.indexed-fade-rise {
+  animation: fadeRise3D 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---- Chart Line Draw-in (scroll triggered) ---- */
+@keyframes chartDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+.indexed-chart-line {
+  animation: chartDraw 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ---- Chart area fill-in ---- */
+@keyframes chartFillIn {
+  from { opacity: 0; }
+  to   { opacity: 0.15; }
+}
+
+.indexed-chart-area {
+  animation: chartFillIn 1.5s ease-out 1s forwards;
+  opacity: 0;
+}
+
+/* ---- Slash Underline Draw-in ---- */
+.indexed-slash-underline path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: chartDraw 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+/* ---- VS Badge ---- */
+@keyframes vsPulse3D {
+  0%, 100% { transform: scale(1) rotateY(0deg); }
+  25%      { transform: scale(1.08) rotateY(15deg); }
+  50%      { transform: scale(1.12) rotateY(0deg); }
+  75%      { transform: scale(1.08) rotateY(-15deg); }
+}
+
+.indexed-vs-spin {
+  animation: vsPulse3D 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* ---- 3D Card Hover ---- */
+.indexed-card-3d {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.indexed-card-3d:hover {
+  transform: translateY(-12px) rotateX(2deg) rotateY(-1deg);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(26, 77, 62, 0.08);
+}
+
+/* ---- Deep Shadow System ---- */
+.shadow-indexed-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-indexed {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-indexed-lg {
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-indexed-glow {
+  box-shadow:
+    0 8px 30px rgba(26, 77, 62, 0.15),
+    0 20px 60px rgba(16, 185, 129, 0.1),
+    0 0 80px rgba(26, 77, 62, 0.08);
+}
+
+/* ---- Pillar card top gradient bar ---- */
+.indexed-pillar-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #1A4D3E, #10B981, #34D399);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Floating Icon Bounce ---- */
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-8px) rotate(3deg); }
+}
+
+.indexed-icon-float {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* ---- Scroll-triggered bar growth ---- */
+@keyframes barGrowUp {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+.indexed-bar-grow {
+  transform-origin: bottom;
+  animation: barGrowUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---- Stat counter glow pulse ---- */
+@keyframes statGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(26, 77, 62, 0.3); }
+  50%      { text-shadow: 0 0 40px rgba(16, 185, 129, 0.4), 0 0 80px rgba(26, 77, 62, 0.15); }
+}
+
+.indexed-stat-glow {
+  animation: statGlow 3s ease-in-out infinite;
+}
+
+/* ---- Mesh gradient background ---- */
+@keyframes meshShift {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.indexed-mesh-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26, 77, 62, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(26, 77, 62, 0.08) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: meshShift 20s ease-in-out infinite;
+}
+
+/* ---- Custom Slider ---- */
+.indexed-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  outline: none;
+  border: none;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.indexed-slider:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.indexed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1A4D3E, #10B981, #34D399);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(26, 77, 62, 0.5), 0 0 40px rgba(16, 185, 129, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.indexed-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 30px rgba(26, 77, 62, 0.7), 0 0 60px rgba(16, 185, 129, 0.3);
+}
+
+.indexed-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1A4D3E, #10B981, #34D399);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 20px rgba(26, 77, 62, 0.5);
+}
+
+/* ---- Section reveal with 3D ---- */
+@keyframes sectionReveal3D {
+  from {
+    opacity: 0;
+    transform: translateY(40px) perspective(800px) rotateX(4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) perspective(800px) rotateX(0deg);
+  }
+}
+
+.indexed-section-reveal {
+  animation: sectionReveal3D 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---- Responsive chart container ---- */
+.indexed-chart-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.indexed-chart-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .indexed-chart-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* ---- Hero Chart 3D panel ---- */
+.hero-chart-3d {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.hero-chart-3d:hover {
+  transform: perspective(1000px) rotateX(1.5deg) rotateY(-1deg) translateY(-8px);
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.3),
+    0 0 100px rgba(26, 77, 62, 0.1);
+}
+
+/* ---- Frosted glass utility ---- */
+.frosted-glass {
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.frosted-glass-light {
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

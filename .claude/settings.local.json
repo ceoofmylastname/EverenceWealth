@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(npx next build:*)",
+      "Bash(pkill:*)",
+      "Bash(python3:*)",
+      "Bash(for f in *.jsonl)",
+      "Bash(do if python3 -c \" with open\\(''$f''\\) as fp: content = fp.read\\(\\) if ''PHILOSOPHY PAGE'' in content and ''Human Asset'' in content: # Check if it has the actual content not just summary references if ''The biggest shift'' in content or ''abundance mindset'' in content.lower\\(\\) or ''SECTION 1'' in content: print\\(''HAS DETAILED CONTENT''\\) else: print\\(''Has references only''\\) \")",
+      "Bash(then echo \"$f has detailed philosophy content\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(for page in \"/\" \"/philosophy\" \"/killers\" \"/taxes\" \"/indexed\" \"/blog\")",
+      "Bash(do echo -n \"$page: \")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git status:*)"
+    ]
+  }
+}
