@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { LayoutDashboard, FileText, Share2, CircleHelp, Settings, LogOut } from 'lucide-react'
+import { LayoutDashboard, FileText, Share2, CircleHelp, AlertTriangle, Settings, LogOut } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { clsx } from 'clsx'
 import { createClient } from '@/lib/supabase/client'
@@ -12,6 +12,7 @@ const sidebarItems = [
     { name: 'Blog Posts', href: '/admin/blog', icon: FileText, disabled: true },
     { name: 'Clusters', href: '/admin/clusters', icon: Share2, disabled: false },
     { name: 'Q&A Pages', href: '/admin/qa', icon: CircleHelp, disabled: true },
+    { name: 'System Errors', href: '/admin/system/errors', icon: AlertTriangle, disabled: false },
     { name: 'Settings', href: '/admin/settings', icon: Settings, disabled: false },
 ]
 
@@ -37,7 +38,7 @@ export default function Sidebar() {
                         href={item.disabled ? '#' : item.href}
                         className={clsx(
                             'flex items-center px-4 py-3 rounded-lg transition-colors group',
-                            pathname === item.href
+                            pathname?.startsWith(item.href)
                                 ? 'bg-brand-gold/10 text-brand-gold'
                                 : 'text-gray-400 hover:bg-white/5 hover:text-white',
                             item.disabled && 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-gray-400'

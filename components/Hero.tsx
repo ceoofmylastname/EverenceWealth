@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import { useAssessmentModal } from '@/components/AssessmentModal';
 
 const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { openModal } = useAssessmentModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -21,7 +23,7 @@ const Hero: React.FC = () => {
   const textOpacity = 1 - progress * 1.5;
 
   return (
-    <section className="relative h-screen bg-[#020806] w-full overflow-hidden flex flex-col">
+    <section className="relative h-screen bg-gradient-to-b from-[#020806] via-[#071a14] to-[#020806] w-full overflow-hidden flex flex-col">
       {/* Decorative Side Text - Professional Editorial Style */}
       <div className="hidden xl:flex fixed left-8 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-12 opacity-10 pointer-events-none">
         <span className="[writing-mode:vertical-lr] rotate-180 text-[10px] font-black uppercase tracking-[1em] text-white font-sans">
@@ -41,7 +43,9 @@ const Hero: React.FC = () => {
 
       {/* Background Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160vw] h-[160vw] bg-[radial-gradient(circle_at_center,rgba(26,77,62,0.18)_0%,transparent_70%)] opacity-30"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160vw] h-[160vw] bg-[radial-gradient(circle_at_center,rgba(26,77,62,0.25)_0%,transparent_60%)]"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_top_right,rgba(236,218,118,0.06)_0%,transparent_50%)]"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(16,185,129,0.08)_0%,transparent_50%)]"></div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full pt-24 pb-10 px-6 overflow-hidden">
@@ -54,7 +58,7 @@ const Hero: React.FC = () => {
           {/* Top Badge */}
           <div className="overflow-hidden">
             <div className={`px-4 md:px-5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-              <span className="block text-white/50 uppercase tracking-[0.4em] md:tracking-[0.8em] text-[7px] md:text-[9px] font-black font-sans">
+              <span className="block text-white/80 uppercase tracking-[0.4em] md:tracking-[0.8em] text-[7px] md:text-[9px] font-black font-sans">
                 ESTABLISHED 1998 • INDEPENDENT FIDUCIARY
               </span>
             </div>
@@ -67,7 +71,7 @@ const Hero: React.FC = () => {
                <h1 className={`text-[11vw] md:text-[7.5vw] font-black hero-glow leading-[0.8] transition-all duration-[1200ms] cubic-bezier(0.16, 1, 0.3, 1) ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
                 BRIDGE
               </h1>
-              <span className={`italic font-extralight text-white/30 text-[5vw] md:text-[3vw] mb-[0.8vw] transition-all duration-[1200ms] delay-200 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+              <span className={`italic font-extralight text-white/70 text-[5vw] md:text-[3vw] mb-[0.8vw] transition-all duration-[1200ms] delay-200 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
                 the
               </span>
             </div>
@@ -91,7 +95,7 @@ const Hero: React.FC = () => {
               Stop funding Wall Street's wealth. <br />
               <span className="text-evergreen font-black italic">Start building yours.</span>
             </p>
-            <p className="text-white/30 text-[7px] md:text-[10px] uppercase tracking-[0.3em] font-medium leading-relaxed max-w-md mx-auto font-sans">
+            <p className="text-white/70 text-[7px] md:text-[10px] uppercase tracking-[0.3em] font-medium leading-relaxed max-w-md mx-auto font-sans">
               You've been sold a myth. Save and hope? <br className="hidden md:block" /> That's a gamble. We reclaim control.
             </p>
           </div>
@@ -101,7 +105,7 @@ const Hero: React.FC = () => {
         <div className={`w-full max-w-4xl px-2 transition-all duration-[1500ms] delay-[1200ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="glass rounded-[24px] md:rounded-[40px] p-4 md:p-6 lg:p-7 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 border-white/5 shadow-2xl">
             <div className="flex flex-col items-center md:items-start">
-               <span className="text-[7px] md:text-[9px] text-white/20 uppercase tracking-[0.4em] font-black mb-1 font-sans">System Status</span>
+               <span className="text-[7px] md:text-[9px] text-white/60 uppercase tracking-[0.4em] font-black mb-1 font-sans">System Status</span>
                <div className="flex items-center gap-2">
                  <div className="w-1.5 h-1.5 bg-evergreen rounded-full animate-ping"></div>
                  <span className="text-white font-bold text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-sans">Analysis Active</span>
@@ -111,11 +115,11 @@ const Hero: React.FC = () => {
             <div className="hidden md:block h-10 w-[1px] bg-white/10"></div>
 
             <div className="flex flex-col items-center text-center">
-               <span className="text-[7px] md:text-[9px] text-white/20 uppercase tracking-[0.4em] font-black mb-1 font-sans">Current Protocol</span>
+               <span className="text-[7px] md:text-[9px] text-white/60 uppercase tracking-[0.4em] font-black mb-1 font-sans">Current Protocol</span>
                <span className="text-white font-sans text-xs md:text-base font-bold">Tax-Free Bucket Optimization</span>
             </div>
 
-            <button className="group relative w-full md:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-evergreen rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px] overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 font-sans">
+            <button onClick={openModal} className="btn-3d-light group relative w-full md:w-auto px-6 md:px-8 py-3 md:py-4 text-evergreen rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px] overflow-hidden font-sans">
               <span className="relative z-10">Begin Assessment</span>
             </button>
           </div>

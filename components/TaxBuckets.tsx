@@ -35,10 +35,11 @@ const BUCKETS = [
 
 const TaxBuckets: React.FC = () => {
   return (
-    <section id="tax" className="py-40 bg-[#020806] text-white relative overflow-hidden">
+    <section id="tax" className="py-40 bg-gradient-to-b from-[#020806] via-[#081e17] to-[#020806] text-white relative overflow-hidden">
       {/* Decorative Gradients */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-evergreen/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-evergreen/5 rounded-full blur-[120px]"></div>
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-evergreen/10 rounded-full blur-[150px]"></div>
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-evergreen/10 rounded-full blur-[150px]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(236,218,118,0.04)_0%,transparent_60%)]"></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-32 scroll-reveal">

@@ -22,9 +22,9 @@ const REASONS = [
 
 const About: React.FC = () => {
   return (
-    <section className="py-40 bg-white text-evergreen relative z-10">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-[#F9FAFB] text-evergreen relative z-10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-4xl mb-24 scroll-reveal">
+        <div className="max-w-4xl mb-14 scroll-reveal">
           <span className="text-xs font-black uppercase tracking-[0.5em] text-evergreen/40 mb-6 block">Why Everence Wealth</span>
           <h2 className="font-space text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter">
             Financial Planning For <br />

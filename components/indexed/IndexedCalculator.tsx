@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { useAssessmentModal } from '@/components/AssessmentModal'
 
 function formatCurrency(value: number) {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
 }
 
 export default function IndexedCalculator() {
+    const { openModal } = useAssessmentModal()
     const [startingAmount, setStartingAmount] = useState(100000)
     const [monthlyContribution, setMonthlyContribution] = useState(500)
     const [years, setYears] = useState(30)
@@ -79,7 +81,7 @@ export default function IndexedCalculator() {
                         {/* Starting Amount */}
                         <div>
                             <div className="mb-3 flex items-baseline justify-between">
-                                <label className="text-sm font-bold uppercase tracking-wider text-white/60">Starting Amount</label>
+                                <label className="text-sm font-bold uppercase tracking-wider text-white/90">Starting Amount</label>
                                 <span className="font-space-grotesk text-2xl font-black text-white">{formatCurrency(startingAmount)}</span>
                             </div>
                             <input
@@ -91,7 +93,7 @@ export default function IndexedCalculator() {
                                 onChange={(e) => setStartingAmount(Number(e.target.value))}
                                 className="indexed-slider w-full"
                             />
-                            <div className="mt-1 flex justify-between text-xs text-white/30">
+                            <div className="mt-1 flex justify-between text-xs text-white/70">
                                 <span>$10k</span><span>$1M</span>
                             </div>
                         </div>
@@ -99,7 +101,7 @@ export default function IndexedCalculator() {
                         {/* Monthly Contribution */}
                         <div>
                             <div className="mb-3 flex items-baseline justify-between">
-                                <label className="text-sm font-bold uppercase tracking-wider text-white/60">Monthly Contribution</label>
+                                <label className="text-sm font-bold uppercase tracking-wider text-white/90">Monthly Contribution</label>
                                 <span className="font-space-grotesk text-2xl font-black text-white">{formatCurrency(monthlyContribution)}</span>
                             </div>
                             <input
@@ -111,7 +113,7 @@ export default function IndexedCalculator() {
                                 onChange={(e) => setMonthlyContribution(Number(e.target.value))}
                                 className="indexed-slider w-full"
                             />
-                            <div className="mt-1 flex justify-between text-xs text-white/30">
+                            <div className="mt-1 flex justify-between text-xs text-white/70">
                                 <span>$0</span><span>$10k</span>
                             </div>
                         </div>
@@ -119,7 +121,7 @@ export default function IndexedCalculator() {
                         {/* Years */}
                         <div>
                             <div className="mb-3 flex items-baseline justify-between">
-                                <label className="text-sm font-bold uppercase tracking-wider text-white/60">Years to Invest</label>
+                                <label className="text-sm font-bold uppercase tracking-wider text-white/90">Years to Invest</label>
                                 <span className="font-space-grotesk text-2xl font-black text-white">{years} years</span>
                             </div>
                             <input
@@ -131,7 +133,7 @@ export default function IndexedCalculator() {
                                 onChange={(e) => setYears(Number(e.target.value))}
                                 className="indexed-slider w-full"
                             />
-                            <div className="mt-1 flex justify-between text-xs text-white/30">
+                            <div className="mt-1 flex justify-between text-xs text-white/70">
                                 <span>10 yrs</span><span>40 yrs</span>
                             </div>
                         </div>
@@ -141,14 +143,14 @@ export default function IndexedCalculator() {
                     <div className="space-y-6">
                         {/* Traditional */}
                         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition-all hover:bg-white/[0.06]">
-                            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/50">Traditional Portfolio</h3>
+                            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/80">Traditional Portfolio</h3>
                             <div className="mb-2 font-space-grotesk text-4xl font-black text-red-400">
                                 {formatCurrency(results.traditional)}
                             </div>
                             <div className="flex gap-4 text-sm">
-                                <span className="text-white/40">Fees paid: <span className="font-bold text-red-400">{formatCurrency(results.traditionalFees)}</span></span>
+                                <span className="text-white/80">Fees paid: <span className="font-bold text-red-400">{formatCurrency(results.traditionalFees)}</span></span>
                             </div>
-                            <p className="mt-2 text-xs text-white/30">7% avg return, -30% crashes, 2.5% fees</p>
+                            <p className="mt-2 text-xs text-white/70">7% avg return, -30% crashes, 2.5% fees</p>
                         </div>
 
                         {/* Indexed */}
@@ -158,28 +160,28 @@ export default function IndexedCalculator() {
                                 {formatCurrency(results.indexed)}
                             </div>
                             <div className="flex gap-4 text-sm">
-                                <span className="text-white/40">Fees paid: <span className="font-bold text-emerald-400">{formatCurrency(results.indexedFees)}</span></span>
+                                <span className="text-white/80">Fees paid: <span className="font-bold text-emerald-400">{formatCurrency(results.indexedFees)}</span></span>
                             </div>
-                            <p className="mt-2 text-xs text-white/30">8% avg return, 0% floor, 0.5% fees</p>
+                            <p className="mt-2 text-xs text-white/70">8% avg return, 0% floor, 0.5% fees</p>
                         </div>
 
                         {/* Difference */}
                         <div className="rounded-2xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-[#1A4D3E]/20 p-6 text-center backdrop-blur-sm">
-                            <p className="mb-2 text-sm font-bold text-white/50">Your Indexed Advantage</p>
+                            <p className="mb-2 text-sm font-bold text-white/80">Your Indexed Advantage</p>
                             <div className="indexed-gradient-text bg-clip-text font-space-grotesk text-4xl font-black text-transparent md:text-5xl">
                                 +{formatCurrency(results.difference)}
                             </div>
-                            <p className="mt-2 text-sm text-white/40">more with indexed strategy</p>
+                            <p className="mt-2 text-sm text-white/80">more with indexed strategy</p>
                         </div>
 
                         {/* CTA */}
-                        <a
-                            href="#assessment"
-                            className="group flex items-center justify-center gap-3 rounded-2xl bg-white px-8 py-4 font-space-grotesk text-lg font-bold text-[#1A4D3E] transition-all hover:-translate-y-1 hover:shadow-xl"
+                        <button
+                            onClick={openModal}
+                            className="btn-3d-light group flex w-full items-center justify-center gap-3 rounded-2xl px-8 py-4 font-space-grotesk text-lg font-bold text-[#1A4D3E]"
                         >
                             Schedule Strategy Session
-                            <span className="transition-transform group-hover:translate-x-1">→</span>
-                        </a>
+                            <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </button>
                     </div>
                 </div>
             </div>

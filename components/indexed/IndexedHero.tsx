@@ -42,7 +42,7 @@ export default function IndexedHero() {
                         ZERO
                     </span>
                     {/* "IS YOUR HERO" — smaller refined line */}
-                    <span className="mt-1 block font-space-grotesk text-[22px] font-bold tracking-[0.15em] text-white/60 sm:text-[28px] md:mt-2 md:text-[36px] lg:text-[44px]">
+                    <span className="mt-1 block font-space-grotesk text-[22px] font-bold tracking-[0.15em] text-white/90 sm:text-[28px] md:mt-2 md:text-[36px] lg:text-[44px]">
                         IS YOUR <span className="relative inline-block text-white">HERO
                             <svg className="indexed-slash-underline absolute -bottom-1 left-0 w-full md:-bottom-2" viewBox="0 0 200 10" preserveAspectRatio="none" height="8">
                                 <path d="M0 8 L200 2" stroke="url(#slashGradHero)" strokeWidth="4" fill="none" strokeLinecap="round" />
@@ -60,7 +60,7 @@ export default function IndexedHero() {
 
                 {/* Subheadline */}
                 <div className={`indexed-fade-rise mx-auto mb-12 max-w-xl ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-                    <p className="text-base leading-relaxed text-white/40 md:text-lg lg:text-xl">
+                    <p className="text-base leading-relaxed text-white/80 md:text-lg lg:text-xl">
                         Protection from market loss. Participation in market gains.
                     </p>
                     <p className="mt-4 inline-block rounded-full bg-emerald-500/10 px-5 py-2 text-sm font-semibold tracking-wide text-emerald-300/90 shadow-[0_0_30px_rgba(16,185,129,0.1)] backdrop-blur-sm md:text-base">
@@ -83,10 +83,10 @@ export default function IndexedHero() {
                                     <div className="h-2.5 w-2.5 rounded-full bg-amber-400/60" />
                                     <div className="h-2.5 w-2.5 rounded-full bg-emerald-400/60" />
                                 </div>
-                                <span className="font-space-grotesk text-[10px] font-bold tracking-[0.2em] text-white/20 md:text-xs">PERFORMANCE COMPARISON</span>
+                                <span className="font-space-grotesk text-[10px] font-bold tracking-[0.2em] text-white/60 md:text-xs">PERFORMANCE COMPARISON</span>
                                 <div className="flex items-center gap-3">
-                                    <span className="flex items-center gap-1.5 text-[10px] text-white/30 md:text-xs"><span className="inline-block h-2 w-4 rounded-sm bg-red-500/60" />Traditional</span>
-                                    <span className="flex items-center gap-1.5 text-[10px] text-white/30 md:text-xs"><span className="inline-block h-2 w-4 rounded-sm bg-emerald-500/60" />Indexed</span>
+                                    <span className="flex items-center gap-1.5 text-[10px] text-white/70 md:text-xs"><span className="inline-block h-2 w-4 rounded-sm bg-red-500/60" />Traditional</span>
+                                    <span className="flex items-center gap-1.5 text-[10px] text-white/70 md:text-xs"><span className="inline-block h-2 w-4 rounded-sm bg-emerald-500/60" />Indexed</span>
                                 </div>
                             </div>
 
@@ -208,8 +208,8 @@ export default function IndexedHero() {
 
             {/* Scroll indicator */}
             <div className={`indexed-fade-rise absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '1.8s' }}>
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/15">Scroll</span>
-                <ChevronDown className="h-4 w-4 animate-bounce text-white/20" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Scroll</span>
+                <ChevronDown className="h-4 w-4 animate-bounce text-white/60" />
             </div>
         </section>
     )

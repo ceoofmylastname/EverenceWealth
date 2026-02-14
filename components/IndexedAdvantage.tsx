@@ -5,7 +5,7 @@ import { ShieldCheck, TrendingUp, Zap, Users, Gem, Activity } from 'lucide-react
 
 const IndexedAdvantage: React.FC = () => {
   return (
-    <section className="py-40 bg-white text-evergreen relative overflow-hidden">
+    <section className="py-40 bg-gradient-to-br from-emerald-50/30 via-white to-white text-evergreen relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
           <div className="scroll-reveal">
@@ -91,9 +91,9 @@ const IndexedAdvantage: React.FC = () => {
             ))}
           </div>
           <div className="mt-20 text-center">
-            <button className="px-16 py-8 bg-evergreen text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl">
+            <a href="/indexed" className="inline-block px-16 py-8 bg-evergreen text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl">
               Model Your Indexed Strategy
-            </button>
+            </a>
           </div>
         </div>
       </div>

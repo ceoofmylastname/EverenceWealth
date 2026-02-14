@@ -102,7 +102,7 @@ export default function ThreeBuckets() {
                             </defs>
                         </svg>
                     </h2>
-                    <p className="scroll-reveal mx-auto mt-8 max-w-xl text-lg text-white/40">
+                    <p className="scroll-reveal mx-auto mt-8 max-w-xl text-lg text-white/80">
                         Every dollar you own sits in one of three tax categories. Where you put your money determines when — and how much — the government takes.
                     </p>
                 </div>
@@ -121,7 +121,7 @@ export default function ThreeBuckets() {
                                     <span className={`rounded-full ${bucket.badgeColor} px-3 py-1 text-[10px] font-black tracking-wider text-white`}>
                                         {bucket.label}
                                     </span>
-                                    <span className="text-xs font-bold text-white/20">{bucket.subtitle}</span>
+                                    <span className="text-xs font-bold text-white/60">{bucket.subtitle}</span>
                                 </div>
 
                                 {/* Icon */}
@@ -129,20 +129,20 @@ export default function ThreeBuckets() {
 
                                 {/* What */}
                                 <div className="mb-4">
-                                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/30">What It Is</p>
-                                    <p className="text-sm text-white/60">{bucket.what}</p>
+                                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/70">What It Is</p>
+                                    <p className="text-sm text-white/90">{bucket.what}</p>
                                 </div>
 
                                 {/* How */}
                                 <div className="mb-4">
-                                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/30">How It Works</p>
-                                    <p className="text-sm text-white/60">{bucket.how}</p>
+                                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/70">How It Works</p>
+                                    <p className="text-sm text-white/90">{bucket.how}</p>
                                 </div>
 
                                 {/* Tax treatments */}
                                 <div className="mb-4 space-y-2">
                                     {bucket.treatments.map((t) => (
-                                        <div key={t} className="rounded-lg bg-white/[0.04] px-3 py-2 text-xs text-white/50">
+                                        <div key={t} className="rounded-lg bg-white/[0.04] px-3 py-2 text-xs text-white/80">
                                             {t}
                                         </div>
                                     ))}
@@ -154,8 +154,8 @@ export default function ThreeBuckets() {
                                 </div>
 
                                 {/* When to use */}
-                                <p className="text-[10px] font-bold uppercase tracking-wider text-white/20">
-                                    Best For: <span className="text-white/40">{bucket.use}</span>
+                                <p className="text-[10px] font-bold uppercase tracking-wider text-white/60">
+                                    Best For: <span className="text-white/80">{bucket.use}</span>
                                 </p>
                             </div>
                         </div>
@@ -168,7 +168,7 @@ export default function ThreeBuckets() {
                         <table className="w-full min-w-[650px]">
                             <thead>
                                 <tr className="border-b border-white/[0.08]" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                                    <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white/40">Feature</th>
+                                    <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white/80">Feature</th>
                                     <th className="px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-red-400">Taxable</th>
                                     <th className="px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-amber-400">Tax-Deferred</th>
                                     <th className="px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-emerald-400">Tax-Exempt</th>
@@ -177,10 +177,10 @@ export default function ThreeBuckets() {
                             <tbody>
                                 {TABLE_ROWS.map((row) => (
                                     <tr key={row.label} className={`border-b border-white/[0.04] ${row.bold ? 'bg-emerald-500/[0.06]' : ''}`}>
-                                        <td className={`px-6 py-3.5 text-sm ${row.bold ? 'font-bold text-white/70' : 'text-white/40'}`}>{row.label}</td>
-                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight ? 'font-bold text-red-400/80' : 'text-white/40'}`}>{row.taxable}</td>
-                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight ? 'font-bold text-amber-400/80' : 'text-white/40'}`}>{row.deferred}</td>
-                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight || row.bold ? 'font-bold text-emerald-400' : 'text-white/40'}`}>{row.exempt}</td>
+                                        <td className={`px-6 py-3.5 text-sm ${row.bold ? 'font-bold text-white/90' : 'text-white/80'}`}>{row.label}</td>
+                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight ? 'font-bold text-red-400/80' : 'text-white/80'}`}>{row.taxable}</td>
+                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight ? 'font-bold text-amber-400/80' : 'text-white/80'}`}>{row.deferred}</td>
+                                        <td className={`px-6 py-3.5 text-center font-space-grotesk text-sm ${row.highlight || row.bold ? 'font-bold text-emerald-400' : 'text-white/80'}`}>{row.exempt}</td>
                                     </tr>
                                 ))}
                             </tbody>

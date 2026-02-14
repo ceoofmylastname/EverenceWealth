@@ -64,7 +64,7 @@ const StatCard: React.FC<{ data: typeof STATS_DATA[0], index: number }> = ({ dat
 
 const Stats: React.FC = () => {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-gradient-to-b from-[#F9FAFB] to-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 divide-evergreen/10 divide-y-0 md:divide-x">
           {STATS_DATA.map((stat, i) => (

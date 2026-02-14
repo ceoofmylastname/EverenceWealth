@@ -31,14 +31,14 @@ export default function ZeroHero() {
                             </defs>
                         </svg>
                     </h2>
-                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/60">
+                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/90">
                         Warren Buffett&apos;s Rule #1: <strong className="text-white">Never lose money.</strong> In traditional market investing, losses destroy compounding.
                     </p>
                 </div>
 
                 {/* Volatility Recovery Math */}
                 <div className="scroll-reveal mb-16">
-                    <h3 className="mb-8 text-center font-space-grotesk text-xl font-bold text-white/70">Volatility Recovery Math</h3>
+                    <h3 className="mb-8 text-center font-space-grotesk text-xl font-bold text-white/90">Volatility Recovery Math</h3>
                     <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-3">
                         {VOLATILITY_MATH.map((item) => (
                             <div key={item.loss} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center backdrop-blur-sm">
@@ -46,16 +46,16 @@ export default function ZeroHero() {
                                     <div className="flex flex-col items-center">
                                         <span className="mb-2 font-space-grotesk text-lg font-black text-red-400">-{item.loss}</span>
                                         <div className={`indexed-bar-grow w-12 rounded-t-lg bg-gradient-to-t from-red-500 to-red-400 ${item.barHeight}`} />
-                                        <span className="mt-2 text-[9px] font-bold uppercase text-white/30">Loss</span>
+                                        <span className="mt-2 text-[9px] font-bold uppercase text-white/70">Loss</span>
                                     </div>
-                                    <div className="mb-6 text-white/30">&rarr;</div>
+                                    <div className="mb-6 text-white/70">&rarr;</div>
                                     <div className="flex flex-col items-center">
                                         <span className="mb-2 font-space-grotesk text-lg font-black text-amber-400">+{item.recovery}</span>
                                         <div className={`indexed-bar-grow w-12 rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400 ${item.barHeight}`} style={{ animationDelay: '0.3s' }} />
-                                        <span className="mt-2 text-[9px] font-bold uppercase text-white/30">To Recover</span>
+                                        <span className="mt-2 text-[9px] font-bold uppercase text-white/70">To Recover</span>
                                     </div>
                                 </div>
-                                <p className="text-xs text-white/40">
+                                <p className="text-xs text-white/80">
                                     Lose {item.loss} &rarr; Requires {item.recovery} gain to break even
                                 </p>
                             </div>
@@ -75,7 +75,7 @@ export default function ZeroHero() {
                             <div key={item.title} className="rounded-2xl bg-white/[0.06] p-6 text-center">
                                 <span className="indexed-icon-float mb-3 inline-block text-4xl">{item.icon}</span>
                                 <h4 className="mb-2 font-space-grotesk text-lg font-black text-white">{item.title}</h4>
-                                <p className="text-sm text-white/50">{item.desc}</p>
+                                <p className="text-sm text-white/80">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -84,7 +84,7 @@ export default function ZeroHero() {
                 {/* Bottom callout */}
                 <div className="scroll-reveal mx-auto mt-12 max-w-3xl text-center">
                     <div className="rounded-2xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-[#1A4D3E]/20 p-8 backdrop-blur-sm">
-                        <p className="text-lg text-white/70">
+                        <p className="text-lg text-white/90">
                             <strong className="text-emerald-300">Zero is Your Hero</strong> means you never go backwards. You compound from strength, not from recovery.
                         </p>
                     </div>

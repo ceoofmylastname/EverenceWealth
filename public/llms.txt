@@ -1,0 +1,39 @@
+# Everence Wealth
+
+> Independent fiduciary wealth management helping clients bridge the retirement gap with tax-efficient strategies and indexed life insurance.
+
+## About
+
+Everence Wealth is a San Francisco-based independent fiduciary wealth management firm. We specialize in helping high-net-worth individuals and pre-retirees bridge the retirement gap through tax-efficient strategies, indexed life insurance, and comprehensive financial planning. We maintain relationships with 75+ insurance carriers as an independent broker.
+
+## Core Expertise
+
+- **Three Tax Buckets Framework**: Strategic allocation across tax-deferred (401k, Traditional IRA), tax-exempt (Roth, HSA), and tax-free (indexed life insurance) vehicles
+- **Indexed Life Insurance (ILI)**: 0% floor protection from market losses, participation in market gains, and 100% tax-free growth and distributions
+- **Silent Killers of Retirement**: Identifying and eliminating the three forces eroding retirement wealth — excessive fees, market volatility, and unnecessary taxation
+- **Retirement Gap Planning**: Bridging the gap between accumulation-focused strategies and income-focused retirement planning
+
+## Key Concepts
+
+- **Zero Is Your Hero**: The indexed strategy principle where a 0% floor protects against market losses while still participating in gains
+- **Strategic Equity Resource (SER)**: An indexed life insurance strategy that functions like a Roth IRA without income limitations or contribution caps
+- **Wholesale vs Retail**: As an independent broker with 75+ carrier relationships, Everence provides wholesale access to insurance products
+
+## Contact
+
+- Address: 455 Market St, Suite 1940, San Francisco, CA 94105
+- Phone: (555) 123-4567
+- Email: info@everencewealth.com
+
+## Pages
+
+- Homepage: https://www.everencewealth.com
+- Our Philosophy: https://www.everencewealth.com/philosophy
+- Tax Strategy: https://www.everencewealth.com/taxes
+- Silent Killers: https://www.everencewealth.com/killers
+- Indexed Strategy: https://www.everencewealth.com/indexed
+- Blog: https://www.everencewealth.com/blog
+
+## Optional
+
+- llms-full.txt: https://www.everencewealth.com/llms-full.txt

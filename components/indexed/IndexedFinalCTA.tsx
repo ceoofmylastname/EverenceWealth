@@ -1,5 +1,7 @@
 'use client'
 
+import { useAssessmentModal } from '@/components/AssessmentModal'
+
 const BENEFITS = [
     '0% Floor Protection',
     'Tax-Free Growth',
@@ -14,6 +16,8 @@ const TRUST_BADGES = [
 ]
 
 export default function IndexedFinalCTA() {
+    const { openModal } = useAssessmentModal()
+
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1f1a] via-[#1A4D3E] to-emerald-600 py-24 md:py-40">
             {/* Floating orbs */}
@@ -36,7 +40,7 @@ export default function IndexedFinalCTA() {
                     Market Risk?
                 </h2>
 
-                <p className="scroll-reveal mx-auto mb-12 max-w-2xl text-lg text-white/70">
+                <p className="scroll-reveal mx-auto mb-12 max-w-2xl text-lg text-white/90">
                     Discover how the indexed strategy can protect and grow your wealth — tax-free.
                 </p>
 
@@ -52,17 +56,17 @@ export default function IndexedFinalCTA() {
 
                 {/* CTA Button */}
                 <div className="scroll-reveal mb-8">
-                    <a
-                        href="#assessment"
-                        className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-white px-10 py-6 font-space-grotesk text-lg font-bold text-[#1A4D3E] shadow-[0_20px_60px_rgba(255,255,255,0.15)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(255,255,255,0.2)]"
+                    <button
+                        onClick={openModal}
+                        className="btn-3d-light group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-10 py-6 font-space-grotesk text-lg font-bold text-[#1A4D3E]"
                     >
                         Schedule Your Financial Needs Assessment
-                        <span className="transition-transform group-hover:translate-x-1">→</span>
-                    </a>
+                        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </button>
                 </div>
 
                 {/* Guarantee */}
-                <p className="scroll-reveal mb-8 text-sm text-white/50">
+                <p className="scroll-reveal mb-8 text-sm text-white/80">
                     Complimentary. No pressure. No sales pitch.
                     <br />
                     Just clarity on your options.
@@ -71,7 +75,7 @@ export default function IndexedFinalCTA() {
                 {/* Trust badges */}
                 <div className="scroll-reveal flex flex-wrap items-center justify-center gap-6">
                     {TRUST_BADGES.map((badge) => (
-                        <span key={badge} className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white/40">
+                        <span key={badge} className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white/80">
                             {badge}
                         </span>
                     ))}

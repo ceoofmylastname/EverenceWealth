@@ -46,7 +46,7 @@ export default function TaxAudience() {
                                     <span className="text-2xl">{item.icon}</span>
                                     <div>
                                         <h4 className="font-space-grotesk text-sm font-bold text-white">{item.title}</h4>
-                                        <p className="text-xs text-white/40">{item.description}</p>
+                                        <p className="text-xs text-white/80">{item.description}</p>
                                     </div>
                                     <span className="ml-auto text-xs font-bold text-emerald-400">✓ ACT NOW</span>
                                 </div>
@@ -69,7 +69,7 @@ export default function TaxAudience() {
                             <div className="space-y-3">
                                 {STATE_TAXES.map((item) => (
                                     <div key={item.state} className="flex items-center gap-3">
-                                        <span className="w-24 text-sm text-white/60">{item.state}</span>
+                                        <span className="w-24 text-sm text-white/90">{item.state}</span>
                                         <div className="flex-1">
                                             <div className={`indexed-bar-grow h-6 rounded-lg ${item.color}`} style={{ width: `${parseFloat(item.rate) / 13.3 * 100}%` }} />
                                         </div>
@@ -93,7 +93,7 @@ export default function TaxAudience() {
 
                         {/* Impact example */}
                         <div className="scroll-reveal rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6" style={{ backdropFilter: 'blur(16px)' }}>
-                            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-white/30">$100k Withdrawal Comparison</p>
+                            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-white/70">$100k Withdrawal Comparison</p>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="rounded-xl bg-red-500/10 p-4 text-center">
                                     <p className="text-xs text-red-400/60">Tax-Deferred (CA)</p>

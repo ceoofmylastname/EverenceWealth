@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useAssessmentModal } from '@/components/AssessmentModal'
 
 export default function PhilosophyHero() {
     const [isLoaded, setIsLoaded] = useState(false)
+    const { openModal } = useAssessmentModal()
 
     useEffect(() => {
         const timer = setTimeout(() => setIsLoaded(true), 150)
@@ -39,7 +41,7 @@ export default function PhilosophyHero() {
                     <span className="block font-space-grotesk text-[36px] font-black leading-[1.1] tracking-[-0.03em] text-white sm:text-[52px] md:text-[72px] lg:text-[90px]">
                         From Accumulation
                     </span>
-                    <span className="mt-1 block font-space-grotesk text-[20px] font-bold tracking-[0.1em] text-white/50 sm:text-[26px] md:mt-3 md:text-[34px] lg:text-[42px]">
+                    <span className="mt-1 block font-space-grotesk text-[20px] font-bold tracking-[0.1em] text-white/80 sm:text-[26px] md:mt-3 md:text-[34px] lg:text-[42px]">
                         TO <span className="relative inline-block text-emerald-400">ABUNDANCE
                             <svg className="indexed-slash-underline absolute -bottom-1 left-0 w-full md:-bottom-2" viewBox="0 0 300 10" preserveAspectRatio="none" height="8">
                                 <path d="M0 8 L300 2" stroke="url(#slashGradPhiloHero)" strokeWidth="4" fill="none" strokeLinecap="round" />
@@ -57,7 +59,7 @@ export default function PhilosophyHero() {
 
                 {/* Subheadline */}
                 <div className={`indexed-fade-rise mx-auto mb-12 max-w-3xl ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-                    <p className="text-base leading-relaxed text-white/40 md:text-lg lg:text-xl">
+                    <p className="text-base leading-relaxed text-white/80 md:text-lg lg:text-xl">
                         We challenge the traditional doctrine of &ldquo;save, sacrifice, and wait.&rdquo;
                         <br className="hidden md:block" />
                         True wealth isn&apos;t about hoarding a finite pie&mdash;it&apos;s about value creation,
@@ -71,7 +73,7 @@ export default function PhilosophyHero() {
                     <div className="hero-chart-3d relative rounded-[2rem] border border-white/[0.08] p-1">
                         <div className="pointer-events-none absolute -inset-[1px] rounded-[2rem] shadow-[0_0_80px_rgba(16,185,129,0.08),_0_0_160px_rgba(26,77,62,0.05)]" />
                         <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.06] bg-white/[0.04] p-8 shadow-[0_30px_100px_rgba(0,0,0,0.4),_inset_0_1px_0_rgba(255,255,255,0.08)] md:p-10" style={{ backdropFilter: 'blur(20px) saturate(1.5)' }}>
-                            <p className="text-base leading-relaxed text-white/60 md:text-lg">
+                            <p className="text-base leading-relaxed text-white/90 md:text-lg">
                                 Everence Wealth operates on an <strong className="text-emerald-400">Abundance Philosophy</strong>&mdash;wealth expands through value creation, not scarcity. We focus on <strong className="text-emerald-400">cash flow over net worth</strong>, strategic deployment over accumulation, and protecting your <strong className="text-emerald-400">Human Life Value</strong>. True financial strength is measured by income streams, not account balances.
                             </p>
                         </div>
@@ -83,17 +85,17 @@ export default function PhilosophyHero() {
 
                 {/* CTA */}
                 <div className={`indexed-fade-rise flex flex-col items-center gap-4 pb-20 sm:flex-row ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '1.2s' }}>
-                    <a href="#assessment" className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-8 py-4 font-space-grotesk text-base font-bold shadow-[0_20px_60px_rgba(255,255,255,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(255,255,255,0.18)] md:px-10 md:py-5 md:text-lg" style={{ backdropFilter: 'blur(20px)', background: 'rgba(255,255,255,0.95)' }}>
+                    <button onClick={openModal} className="btn-3d-light group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-8 py-4 font-space-grotesk text-base font-bold md:px-10 md:py-5 md:text-lg">
                         <span className="relative z-10 text-[#1A4D3E]">Schedule Financial Needs Assessment</span>
                         <span className="relative z-10 text-[#1A4D3E] transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
-                    </a>
+                    </button>
                 </div>
             </div>
 
             {/* Scroll indicator */}
             <div className={`indexed-fade-rise absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '1.6s' }}>
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/15">Scroll</span>
-                <ChevronDown className="h-4 w-4 animate-bounce text-white/20" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Scroll</span>
+                <ChevronDown className="h-4 w-4 animate-bounce text-white/60" />
             </div>
         </section>
     )

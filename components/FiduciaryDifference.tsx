@@ -4,7 +4,7 @@ import { UserCheck, HelpCircle, ShieldAlert, BadgeCheck } from 'lucide-react';
 
 const FiduciaryDifference: React.FC = () => {
   return (
-    <section className="py-40 bg-white text-evergreen relative z-10">
+    <section className="py-40 bg-gradient-to-b from-white to-emerald-50/30 text-evergreen relative z-10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24 scroll-reveal">
           <span className="text-xs font-black uppercase tracking-[0.5em] text-evergreen/40 mb-4 block">The Ethical Standard</span>

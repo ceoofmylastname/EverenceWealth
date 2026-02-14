@@ -130,7 +130,7 @@ export default function KillerVolatility() {
 
                         {/* Buffett Quote */}
                         <div className="scroll-reveal relative mb-10 overflow-hidden rounded-3xl bg-gradient-to-br from-[#1A4D3E] to-[#2a6b56] p-8 text-white">
-                            <span className="pointer-events-none absolute -left-2 -top-6 font-serif text-[120px] leading-none text-white/10">&ldquo;</span>
+                            <span className="pointer-events-none absolute -left-2 -top-6 font-serif text-[120px] leading-none text-white/50">&ldquo;</span>
                             <p className="relative z-10 mb-1 text-2xl font-bold italic">Rule #1: Never lose money.</p>
                             <p className="relative z-10 mb-4 text-2xl font-bold italic">Rule #2: Never forget Rule #1.</p>
                             <cite className="relative z-10 text-sm font-bold not-italic text-emerald-200">&mdash; Warren Buffett</cite>

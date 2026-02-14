@@ -25,7 +25,7 @@ export default function CashFlowKing() {
                             </defs>
                         </svg>
                     </h2>
-                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/60">
+                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/90">
                         You cannot buy groceries with &ldquo;Net Worth.&rdquo; You cannot eat equity. You cannot spend valuation. True financial strength is measured by <strong className="text-emerald-300">Cash Flow</strong>.
                     </p>
                 </div>
@@ -34,7 +34,7 @@ export default function CashFlowKing() {
                 <div className="grid gap-8 lg:grid-cols-2">
                     {/* Traditional */}
                     <div className="scroll-reveal rounded-2xl border border-white/10 bg-white/[0.04] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition-all hover:bg-white/[0.06]">
-                        <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white/50">Traditional Thinking</h3>
+                        <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white/80">Traditional Thinking</h3>
                         <div className="space-y-4">
                             {[
                                 'Build a $2 million portfolio',
@@ -44,7 +44,7 @@ export default function CashFlowKing() {
                             ].map((item) => (
                                 <div key={item} className="flex items-start gap-3 text-sm">
                                     <span className="mt-0.5 text-red-400">&#10005;</span>
-                                    <span className="text-white/60">{item}</span>
+                                    <span className="text-white/90">{item}</span>
                                 </div>
                             ))}
                         </div>
@@ -78,7 +78,7 @@ export default function CashFlowKing() {
                 {/* Bottom callout */}
                 <div className="scroll-reveal mx-auto mt-12 max-w-3xl text-center">
                     <div className="rounded-2xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-[#1A4D3E]/20 p-8 backdrop-blur-sm">
-                        <p className="text-lg text-white/70">
+                        <p className="text-lg text-white/90">
                             Our goal is not just to build a big number for someday, but to generate <strong className="text-emerald-300">cash flow that covers your lifestyle today</strong>.
                         </p>
                     </div>

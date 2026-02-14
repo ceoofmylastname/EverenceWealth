@@ -19,7 +19,7 @@ export default async function BlogSection() {
     const otherPosts = posts.slice(1, 3)
 
     return (
-        <section className="relative overflow-hidden bg-white py-24 md:py-32 lg:py-40">
+        <section className="relative overflow-hidden bg-gradient-to-b from-white to-emerald-50/20 py-24 md:py-32 lg:py-40">
             {/* Subtle background gradient */}
             <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#1A4D3E]/[0.03] to-transparent" />
             <div className="pointer-events-none absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-[#F9FAFB]/50 to-transparent" />
@@ -51,7 +51,7 @@ export default async function BlogSection() {
                 <div className="grid grid-cols-1 gap-8">
                     {/* Featured Post */}
                     <div className="scroll-reveal w-full">
-                        <BlogCard post={featuredPost} featured={true} />
+                        <BlogCard post={featuredPost} variant="featured" />
                     </div>
 
                     {/* Secondary Posts */}

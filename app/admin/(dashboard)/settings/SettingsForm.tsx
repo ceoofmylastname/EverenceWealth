@@ -12,6 +12,7 @@ type SettingsFormValues = {
     fal_api_key: string
     perplexity_api_key: string
     openai_api_key: string
+    gemini_api_key: string
     site_base_url: string
     default_author: string
 }
@@ -22,7 +23,8 @@ export default function SettingsForm({ initialData }: { initialData: SettingsFor
     const [showKeys, setShowKeys] = useState({
         fal: false,
         perplexity: false,
-        openai: false
+        openai: false,
+        gemini: false
     })
 
     const { register, handleSubmit, control, formState: { errors } } = useForm<SettingsFormValues>({
@@ -218,6 +220,30 @@ export default function SettingsForm({ initialData }: { initialData: SettingsFor
                                     </button>
                                 </div>
                             </div>
+
+                            {/* Google Gemini */}
+                            <div>
+                                <label htmlFor="gemini_api_key" className="block text-sm font-bold text-gray-700 uppercase tracking-wide mb-1">
+                                    Google Gemini API Key
+                                </label>
+                                <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                        type={showKeys.gemini ? 'text' : 'password'}
+                                        {...register('gemini_api_key')}
+                                        id="gemini_api_key"
+                                        className="flex-1 block w-full min-w-0 rounded-none rounded-l-md border-gray-300 focus:border-brand-gold focus:ring-brand-gold sm:text-sm text-gray-900 placeholder-gray-400"
+                                        placeholder="AIza..."
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => toggleKeyVisibility('gemini')}
+                                        className="inline-flex items-center px-4 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-brand-gold transition-colors"
+                                    >
+                                        {showKeys.gemini ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                                    </button>
+                                </div>
+                                <p className="mt-2 text-xs text-gray-500">Used for AI-powered error analysis in System Errors.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,7 +268,7 @@ export default function SettingsForm({ initialData }: { initialData: SettingsFor
                                         {...register('site_base_url')}
                                         id="site_base_url"
                                         className="shadow-sm focus:ring-brand-gold focus:border-brand-gold block w-full sm:text-sm border-gray-300 rounded-md text-gray-900 placeholder-gray-400"
-                                        placeholder="https://everencewealth.com"
+                                        placeholder="https://www.everencewealth.com"
                                     />
                                 </div>
                                 <p className="mt-2 text-xs text-gray-500">Used for canonical URLs and SEO.</p>

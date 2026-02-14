@@ -39,9 +39,9 @@ export default function KillerTaxes() {
                         <h2 className="scroll-reveal mb-2 font-space-grotesk text-4xl font-bold md:text-5xl">
                             The Tax Time Bomb
                         </h2>
-                        <p className="scroll-reveal mb-8 text-lg text-white/60">Ticking Inside Your 401(k)</p>
+                        <p className="scroll-reveal mb-8 text-lg text-white/90">Ticking Inside Your 401(k)</p>
 
-                        <p className="scroll-reveal mb-10 text-lg leading-relaxed text-white/70">
+                        <p className="scroll-reveal mb-10 text-lg leading-relaxed text-white/90">
                             Your 401(k) isn&apos;t tax-free &mdash; it&apos;s{' '}
                             <strong className="text-white">tax-deferred</strong>. That means every dollar
                             you withdraw in retirement will be taxed as{' '}
@@ -59,7 +59,7 @@ export default function KillerTaxes() {
                                         </span>
                                         <div>
                                             <h4 className="font-bold text-white">{item.title}</h4>
-                                            <p className="text-sm text-white/50">{item.desc}</p>
+                                            <p className="text-sm text-white/80">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -107,7 +107,7 @@ export default function KillerTaxes() {
                                     <div className="flex h-52 w-16 items-end justify-center rounded-t-xl bg-gradient-to-t from-red-700 to-red-500 md:w-20">
                                         <span className="pb-2 font-space-grotesk text-xs font-black">91%</span>
                                     </div>
-                                    <p className="mt-2 text-[10px] text-white/40">Peak rate</p>
+                                    <p className="mt-2 text-[10px] text-white/80">Peak rate</p>
                                 </div>
 
                                 <div className="flex flex-col items-center">
@@ -115,7 +115,7 @@ export default function KillerTaxes() {
                                     <div className="flex h-28 w-16 items-end justify-center rounded-t-xl bg-gradient-to-t from-amber-700 to-amber-500 md:w-20">
                                         <span className="pb-2 font-space-grotesk text-xs font-black">37%</span>
                                     </div>
-                                    <p className="mt-2 text-[10px] text-white/40">Current rate</p>
+                                    <p className="mt-2 text-[10px] text-white/80">Current rate</p>
                                 </div>
 
                                 <div className="flex flex-col items-center">
@@ -141,12 +141,12 @@ export default function KillerTaxes() {
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-baseline justify-between">
-                                                <span className="text-sm font-bold uppercase tracking-wider text-white/50">{item.year}</span>
+                                                <span className="text-sm font-bold uppercase tracking-wider text-white/80">{item.year}</span>
                                                 <span className={`font-space-grotesk text-xl font-black ${item.color === 'red' ? 'text-red-400' : 'text-emerald-400'}`}>
                                                     {item.value}
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-white/40">{item.detail}</p>
+                                            <p className="text-sm text-white/80">{item.detail}</p>
                                         </div>
                                         {i < TAX_TIMELINE.length - 1 && (
                                             <div className="absolute ml-6 mt-16 h-4 border-l-2 border-dashed border-white/10" />
@@ -155,9 +155,9 @@ export default function KillerTaxes() {
                                 ))}
                             </div>
                             <div className="mt-6 rounded-xl bg-red-900/50 px-4 py-3 text-center">
-                                <span className="text-sm text-white/60">Net after taxes:</span>{' '}
+                                <span className="text-sm text-white/90">Net after taxes:</span>{' '}
                                 <span className="font-space-grotesk text-xl font-black text-red-400">$840,000</span>
-                                <span className="ml-2 text-sm text-white/40">from $1.2M</span>
+                                <span className="ml-2 text-sm text-white/80">from $1.2M</span>
                             </div>
                         </div>
 
@@ -174,17 +174,17 @@ export default function KillerTaxes() {
                                     <span className="font-space-grotesk text-2xl font-black text-red-400">
                                         <CountUp end={30} suffix="%" />
                                     </span>
-                                    <span className="text-[10px] font-bold text-white/40">IRS Share</span>
+                                    <span className="text-[10px] font-bold text-white/80">IRS Share</span>
                                 </div>
                             </div>
                             <div className="mt-4 flex justify-center gap-6">
                                 <div className="flex items-center gap-2">
                                     <span className="h-3 w-3 rounded-full bg-emerald-500" />
-                                    <span className="text-sm font-semibold text-white/70">You: 70%</span>
+                                    <span className="text-sm font-semibold text-white/90">You: 70%</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <span className="h-3 w-3 rounded-full bg-red-500" />
-                                    <span className="text-sm font-semibold text-white/70">IRS: 30%</span>
+                                    <span className="text-sm font-semibold text-white/90">IRS: 30%</span>
                                 </div>
                             </div>
                         </div>

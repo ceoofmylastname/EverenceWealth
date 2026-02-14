@@ -11,6 +11,7 @@ export default async function SettingsPage() {
         fal_api_key: settingsData.find(s => s.setting_key === 'fal_api_key')?.setting_value || '',
         perplexity_api_key: settingsData.find(s => s.setting_key === 'perplexity_api_key')?.setting_value || '',
         openai_api_key: settingsData.find(s => s.setting_key === 'openai_api_key')?.setting_value || '',
+        gemini_api_key: settingsData.find(s => s.setting_key === 'gemini_api_key')?.setting_value || '',
         site_base_url: settingsData.find(s => s.setting_key === 'site_base_url')?.setting_value || '',
         default_author: settingsData.find(s => s.setting_key === 'default_author')?.setting_value || '',
     }

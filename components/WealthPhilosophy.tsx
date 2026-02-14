@@ -4,15 +4,18 @@ import { HeartPulse, Repeat, Lock, ArrowRight, ShieldCheck } from 'lucide-react'
 
 const WealthPhilosophy: React.FC = () => {
   return (
-    <section id="philosophy" className="py-40 bg-[#020806] text-white relative overflow-hidden">
+    <section id="philosophy" className="py-40 bg-gradient-to-b from-[#020806] via-[#0a1f1a] to-[#020806] text-white relative overflow-hidden">
       {/* Background imagery layer */}
-      <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&q=80&w=2000" 
-          className="w-full h-full object-cover" 
-          alt="Modern Architecture" 
+      <div className="absolute inset-0 z-0 opacity-[0.06] pointer-events-none">
+        <img
+          src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&q=80&w=2000"
+          className="w-full h-full object-cover"
+          alt="Modern Architecture"
         />
       </div>
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[radial-gradient(ellipse,rgba(26,77,62,0.15)_0%,transparent_60%)] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse,rgba(236,218,118,0.05)_0%,transparent_50%)] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         
@@ -24,7 +27,7 @@ const WealthPhilosophy: React.FC = () => {
               Net Worth Is <br />
               <span className="italic text-evergreen animate-text-gradient bg-gradient-to-r from-evergreen via-white/80 to-evergreen bg-clip-text text-transparent">Vanity.</span>
             </h2>
-            <p className="mt-10 text-white/40 text-2xl md:text-3xl font-light max-w-3xl leading-relaxed">
+            <p className="mt-10 text-white/80 text-2xl md:text-3xl font-light max-w-3xl leading-relaxed">
               Wall Street wants you obsessed with a balance you can't touch. <span className="text-white font-bold underline decoration-evergreen/50 underline-offset-8">True wealth is measured in CASH FLOW.</span>
             </p>
           </div>
@@ -39,13 +42,13 @@ const WealthPhilosophy: React.FC = () => {
               </div>
               <ul className="space-y-6 mb-14">
                 {["Locked by legislation", "Subject to market timing", "Inaccessible without penalty", "Taxed at unknown future rates"].map((t, i) => (
-                  <li key={i} className="flex items-center gap-5 font-black text-[11px] uppercase tracking-[0.3em] text-white/30 group-hover:text-white/50">
+                  <li key={i} className="flex items-center gap-5 font-black text-[11px] uppercase tracking-[0.3em] text-white/70 group-hover:text-white/80">
                     <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div> {t}
                   </li>
                 ))}
               </ul>
               <div className="p-8 bg-white/[0.03] rounded-[32px] border border-white/5">
-                <p className="text-lg text-white/60 font-medium leading-relaxed italic">
+                <p className="text-lg text-white/90 font-medium leading-relaxed italic">
                   "You're 'worth' $2M but can't buy a car without asking for permission. That's not wealth. That's a trap."
                 </p>
               </div>
@@ -83,7 +86,7 @@ const WealthPhilosophy: React.FC = () => {
                 You Are Your <br />
                 <span className="italic">Greatest Asset.</span>
               </h2>
-              <p className="text-2xl font-light text-white/50 leading-relaxed mb-12">
+              <p className="text-2xl font-light text-white/80 leading-relaxed mb-12">
                 Most people insure their car better than their own ability to produce income. If you earn $150k and work for 20 more years, <span className="text-white font-bold">you are a $3,000,000 asset.</span>
               </p>
               
@@ -96,7 +99,7 @@ const WealthPhilosophy: React.FC = () => {
                 ].map((item, i) => (
                    <div key={i} className="flex items-center gap-4 p-5 glass rounded-[24px] border-white/5 group hover:border-evergreen/40 transition-colors">
                      <div className="p-3 bg-evergreen/10 rounded-xl group-hover:scale-110 transition-transform">{item.icon}</div>
-                     <span className="text-[10px] font-black uppercase tracking-widest text-white/60">{item.text}</span>
+                     <span className="text-[10px] font-black uppercase tracking-widest text-white/90">{item.text}</span>
                    </div>
                 ))}
               </div>

@@ -68,7 +68,7 @@ export default function TaxPhilosophy() {
                         </div>
 
                         <div className="rounded-2xl bg-gradient-to-r from-[#0a1f1a] to-[#1A4D3E] p-6 text-center">
-                            <p className="text-sm text-white/50">Because</p>
+                            <p className="text-sm text-white/80">Because</p>
                             <p className="mt-1 font-space-grotesk text-lg font-bold text-white">
                                 Gross returns don&apos;t pay for retirement.
                             </p>

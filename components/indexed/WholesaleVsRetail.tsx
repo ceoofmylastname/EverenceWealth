@@ -137,7 +137,7 @@ export default function WholesaleVsRetail() {
                     <div className="indexed-stat-glow font-space-grotesk text-7xl font-black text-white md:text-9xl lg:text-[160px]">
                         <CountUp end={105} suffix="%" />
                     </div>
-                    <p className="mt-4 text-xl font-bold text-white/70 md:text-2xl">
+                    <p className="mt-4 text-xl font-bold text-white/90 md:text-2xl">
                         Better performance over 20 years (1999–2020)
                     </p>
                 </div>

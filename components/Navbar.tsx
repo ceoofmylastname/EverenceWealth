@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useAssessmentModal } from '@/components/AssessmentModal';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { openModal } = useAssessmentModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,12 +56,12 @@ const Navbar: React.FC = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-300 text-white/40 hover:text-white"
+              className="text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-300 text-white/80 hover:text-white"
             >
               {link.name}
             </a>
           ))}
-          <button className="relative px-8 py-3 bg-evergreen text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-xl overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(26,77,62,0.4)] active:scale-95">
+          <button onClick={openModal} className="btn-3d-dark relative px-8 py-3 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-xl overflow-hidden">
             <span className="relative z-10">Schedule</span>
           </button>
         </div>
@@ -91,7 +93,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
         </div>
-        <button className="bg-white text-evergreen text-xs font-black uppercase tracking-[0.3em] px-12 py-5 rounded-2xl shadow-2xl">
+        <button onClick={() => { setIsMobileMenuOpen(false); openModal(); }} className="btn-3d-light text-evergreen text-xs font-black uppercase tracking-[0.3em] px-12 py-5 rounded-2xl">
           Schedule Assessment
         </button>
       </div>

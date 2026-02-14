@@ -1,5 +1,7 @@
 'use client'
 
+import { useAssessmentModal } from '@/components/AssessmentModal'
+
 const BENEFITS = [
     'Discover exactly how much fees are costing you',
     'Learn your true after-tax retirement income',
@@ -8,6 +10,8 @@ const BENEFITS = [
 ]
 
 export default function FinalCTA() {
+    const { openModal } = useAssessmentModal()
+
     return (
         <section className="relative overflow-hidden bg-gradient-to-b from-[#0d2b23] to-[#020806] py-24 md:py-32">
             {/* Radial glow */}
@@ -27,7 +31,7 @@ export default function FinalCTA() {
                     </span>
                 </h2>
 
-                <p className="scroll-reveal mx-auto mb-12 max-w-2xl text-lg text-white/60">
+                <p className="scroll-reveal mx-auto mb-12 max-w-2xl text-lg text-white/90">
                     Every day you wait, fees compound, volatility lurks, and the tax time bomb
                     ticks closer. A free assessment shows you exactly where you stand.
                 </p>
@@ -48,17 +52,17 @@ export default function FinalCTA() {
 
                 {/* CTA Button */}
                 <div className="scroll-reveal mb-8">
-                    <a
-                        href="#assessment"
-                        className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-[#1A4D3E] px-10 py-5 font-space-grotesk text-lg font-bold text-white shadow-[0_20px_60px_rgba(16,185,129,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(16,185,129,0.4)]"
+                    <button
+                        onClick={openModal}
+                        className="btn-3d-gradient group inline-flex items-center gap-3 rounded-2xl px-10 py-5 font-space-grotesk text-lg font-bold text-white"
                     >
                         Get Your Free Wealth Assessment
-                        <span className="transition-transform group-hover:translate-x-1">→</span>
-                    </a>
+                        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </button>
                 </div>
 
                 {/* Trust statement */}
-                <p className="scroll-reveal text-sm text-white/30">
+                <p className="scroll-reveal text-sm text-white/70">
                     No obligation &bull; 100% confidential &bull; Takes 15 minutes
                 </p>
             </div>

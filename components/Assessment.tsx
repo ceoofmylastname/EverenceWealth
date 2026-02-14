@@ -1,10 +1,13 @@
+'use client'
 
 import React from 'react';
 import { Eye, CheckCircle, Clock, ShieldCheck } from 'lucide-react';
+import { useAssessmentModal } from '@/components/AssessmentModal';
 
 const Assessment: React.FC = () => {
+  const { openModal } = useAssessmentModal();
   return (
-    <section className="py-40 bg-[#020806] text-white relative overflow-hidden">
+    <section className="py-40 bg-gradient-to-b from-[#020806] via-[#081e17] to-[#020806] text-white relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="glass-card p-12 md:p-24 rounded-[60px] border-white/5 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -16,7 +19,7 @@ const Assessment: React.FC = () => {
                 What's Your <br />
                 Financial Blind Spot?
               </h2>
-              <p className="text-xl text-white/50 font-light leading-relaxed mb-12">
+              <p className="text-xl text-white/80 font-light leading-relaxed mb-12">
                 The Financial Needs Assessment (FNA) is a comprehensive analysis of your position, your future, and your hidden opportunities. <span className="text-white font-bold italic">Most people don't need more products. They need more clarity.</span>
               </p>
               
@@ -53,7 +56,7 @@ const Assessment: React.FC = () => {
                    "You can't make good decisions with bad information."
                  </p>
 
-                 <button className="w-full py-8 bg-evergreen text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl">
+                 <button onClick={openModal} className="btn-3d-dark w-full py-8 text-white rounded-2xl font-black uppercase tracking-widest text-sm">
                    Schedule Your Assessment
                  </button>
                  <p className="text-center mt-6 text-[10px] uppercase font-bold text-evergreen/30 tracking-[0.2em]">

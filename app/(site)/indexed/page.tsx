@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -10,17 +11,26 @@ import LivingBenefits from '@/components/indexed/LivingBenefits'
 import IndexedCalculator from '@/components/indexed/IndexedCalculator'
 import HowItWorks from '@/components/indexed/HowItWorks'
 import IndexedFinalCTA from '@/components/indexed/IndexedFinalCTA'
+import { webPageSchema, breadcrumbSchema, JsonLd } from '@/lib/schema'
 
-export const metadata = {
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.everencewealth.com'
+
+export const metadata: Metadata = {
     title: 'The Indexed Strategy — Zero Is Your Hero | Everence Wealth',
-    description:
-        'Discover the indexed strategy: 0% floor protection from market loss, participation in market gains, and 100% tax-free growth.',
+    description: 'Discover the indexed strategy: 0% floor protection from market loss, participation in market gains, and 100% tax-free growth.',
+    alternates: { canonical: `${siteUrl}/indexed` },
+    openGraph: {
+        title: 'The Indexed Strategy — Zero Is Your Hero | Everence Wealth',
+        description: 'Discover the indexed strategy: 0% floor protection from market loss, participation in market gains, and 100% tax-free growth.',
+    },
 }
 
 export default function IndexedPage() {
     return (
         <ScrollReveal>
             <div className="relative w-full">
+                <JsonLd data={webPageSchema({ name: 'The Indexed Strategy — Zero Is Your Hero', description: 'Discover the indexed strategy: 0% floor protection from market loss, participation in market gains, and 100% tax-free growth.', url: `${siteUrl}/indexed` })} />
+                <JsonLd data={breadcrumbSchema([{ name: 'Home', url: siteUrl }, { name: 'Indexed Strategy', url: `${siteUrl}/indexed` }])} />
                 <Navbar />
                 <IndexedHero />
                 <main>

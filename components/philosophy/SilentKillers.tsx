@@ -82,7 +82,7 @@ export default function SilentKillers() {
                             </defs>
                         </svg>
                     </h2>
-                    <p className="scroll-reveal mx-auto mt-10 max-w-xl text-lg text-white/50">
+                    <p className="scroll-reveal mx-auto mt-10 max-w-xl text-lg text-white/80">
                         It is not what you make; it is what you keep. Most portfolios have four silent leaks that destroy wealth over time.
                     </p>
                 </div>
@@ -100,7 +100,7 @@ export default function SilentKillers() {
                                 <span className="font-space-grotesk text-5xl font-black text-white/[0.04]">{killer.number}</span>
                             </div>
                             <h3 className={`mb-3 font-space-grotesk text-2xl font-black ${killer.color}`}>{killer.title}</h3>
-                            <p className="mb-6 text-white/50">{killer.description}</p>
+                            <p className="mb-6 text-white/80">{killer.description}</p>
 
                             {/* Problem → Solution */}
                             <div className="mb-4 grid grid-cols-2 gap-3">
@@ -116,7 +116,7 @@ export default function SilentKillers() {
 
                             <div className="rounded-2xl bg-white/[0.04] p-4 text-center">
                                 <div className={`font-space-grotesk text-2xl font-black ${killer.color}`}>{killer.stat}</div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-white/30">{killer.statLabel}</p>
+                                <p className="text-xs font-bold uppercase tracking-wider text-white/70">{killer.statLabel}</p>
                             </div>
                         </div>
                     ))}
@@ -124,11 +124,11 @@ export default function SilentKillers() {
 
                 {/* Big stat */}
                 <div className="scroll-reveal mt-16 overflow-hidden rounded-3xl bg-gradient-to-r from-red-600/20 via-amber-500/20 to-emerald-500/20 p-12 text-center backdrop-blur-sm md:p-16">
-                    <p className="mb-4 text-sm font-bold uppercase tracking-wider text-white/40">Without protection, one health event can destroy</p>
+                    <p className="mb-4 text-sm font-bold uppercase tracking-wider text-white/80">Without protection, one health event can destroy</p>
                     <div className="font-space-grotesk text-6xl font-black text-white md:text-8xl">
                         <CountUp end={30} suffix="+" prefix="" /> Years
                     </div>
-                    <p className="mt-4 text-lg text-white/50">of wealth accumulation</p>
+                    <p className="mt-4 text-lg text-white/80">of wealth accumulation</p>
                 </div>
             </div>
         </section>

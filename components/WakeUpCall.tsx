@@ -4,7 +4,7 @@ import { AlertCircle, ArrowDown } from 'lucide-react';
 
 const WakeUpCall: React.FC = () => {
   return (
-    <section className="py-40 bg-white text-evergreen relative z-10">
+    <section className="py-40 bg-gradient-to-b from-white via-white to-emerald-50/40 text-evergreen relative z-10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-8 scroll-reveal">

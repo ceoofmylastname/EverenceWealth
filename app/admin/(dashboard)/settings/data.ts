@@ -2,7 +2,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { decrypt } from './utils'
 
-const SECURE_KEYS = ['fal_api_key', 'perplexity_api_key', 'openai_api_key']
+const SECURE_KEYS = ['fal_api_key', 'perplexity_api_key', 'openai_api_key', 'gemini_api_key']
 
 export async function getSettings() {
     const supabase = createClient()

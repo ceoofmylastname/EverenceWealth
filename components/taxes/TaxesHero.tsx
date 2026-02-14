@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useAssessmentModal } from '@/components/AssessmentModal'
 
 export default function TaxesHero() {
     const [isLoaded, setIsLoaded] = useState(false)
+    const { openModal } = useAssessmentModal()
 
     useEffect(() => {
         const timer = setTimeout(() => setIsLoaded(true), 150)
@@ -39,7 +41,7 @@ export default function TaxesHero() {
                     <span className="block font-space-grotesk text-[36px] font-black leading-[1.1] tracking-[-0.03em] text-white sm:text-[52px] md:text-[72px] lg:text-[90px]">
                         The Tax Time Bomb
                     </span>
-                    <span className="mt-1 block font-space-grotesk text-[20px] font-bold tracking-[0.1em] text-white/50 sm:text-[26px] md:mt-3 md:text-[34px] lg:text-[42px]">
+                    <span className="mt-1 block font-space-grotesk text-[20px] font-bold tracking-[0.1em] text-white/80 sm:text-[26px] md:mt-3 md:text-[34px] lg:text-[42px]">
                         HIDING IN YOUR <span className="relative inline-block text-red-400">RETIREMENT
                             <svg className="indexed-slash-underline absolute -bottom-1 left-0 w-full md:-bottom-2" viewBox="0 0 300 10" preserveAspectRatio="none" height="8">
                                 <path d="M0 8 L300 2" stroke="url(#slashGradTaxHero)" strokeWidth="4" fill="none" strokeLinecap="round" />
@@ -57,7 +59,7 @@ export default function TaxesHero() {
 
                 {/* Subheadline */}
                 <div className={`indexed-fade-rise mx-auto mb-12 max-w-2xl ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-                    <p className="text-base leading-relaxed text-white/40 md:text-lg lg:text-xl">
+                    <p className="text-base leading-relaxed text-white/80 md:text-lg lg:text-xl">
                         Most Americans have a silent partner in their 401(k). His name is Uncle Sam.
                         <br className="hidden md:block" />
                         And he owns a percentage you won&apos;t know until you retire.
@@ -76,29 +78,29 @@ export default function TaxesHero() {
                                     <div className="h-2.5 w-2.5 rounded-full bg-amber-400/60" />
                                     <div className="h-2.5 w-2.5 rounded-full bg-emerald-400/60" />
                                 </div>
-                                <span className="font-space-grotesk text-[10px] font-bold tracking-[0.2em] text-white/20 md:text-xs">YOUR 401(k) REALITY</span>
-                                <span className="text-[10px] text-white/20">⏰💣</span>
+                                <span className="font-space-grotesk text-[10px] font-bold tracking-[0.2em] text-white/60 md:text-xs">YOUR 401(k) REALITY</span>
+                                <span className="text-[10px] text-white/60">⏰💣</span>
                             </div>
 
                             {/* Content */}
                             <div className="grid gap-0 md:grid-cols-3">
                                 {/* What you see */}
                                 <div className="border-b border-white/[0.06] p-6 text-center md:border-b-0 md:border-r md:p-8">
-                                    <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-white/30">Your Balance</p>
+                                    <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-white/70">Your Balance</p>
                                     <p className="font-space-grotesk text-3xl font-black text-white md:text-4xl">$1,000,000</p>
-                                    <p className="mt-2 text-xs text-white/20">What you see</p>
+                                    <p className="mt-2 text-xs text-white/60">What you see</p>
                                 </div>
                                 {/* IRS share */}
                                 <div className="border-b border-white/[0.06] p-6 text-center md:border-b-0 md:border-r md:p-8">
                                     <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-red-400/60">IRS Share</p>
                                     <p className="font-space-grotesk text-3xl font-black text-red-400 md:text-4xl">-$500,000</p>
-                                    <p className="mt-2 text-xs text-white/20">Federal + State taxes</p>
+                                    <p className="mt-2 text-xs text-white/60">Federal + State taxes</p>
                                 </div>
                                 {/* What you keep */}
                                 <div className="p-6 text-center md:p-8">
                                     <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-amber-400/60">You Keep</p>
                                     <p className="font-space-grotesk text-3xl font-black text-amber-400 md:text-4xl">$500,000</p>
-                                    <p className="mt-2 text-xs text-white/20">Your actual retirement</p>
+                                    <p className="mt-2 text-xs text-white/60">Your actual retirement</p>
                                 </div>
                             </div>
 
@@ -115,11 +117,11 @@ export default function TaxesHero() {
 
                 {/* CTA Buttons */}
                 <div className={`indexed-fade-rise flex flex-col items-center gap-4 pb-20 sm:flex-row ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '1.2s' }}>
-                    <a href="#assessment" className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-8 py-4 font-space-grotesk text-base font-bold shadow-[0_20px_60px_rgba(255,255,255,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(255,255,255,0.18)] md:px-10 md:py-5 md:text-lg" style={{ backdropFilter: 'blur(20px)', background: 'rgba(255,255,255,0.95)' }}>
+                    <button onClick={openModal} className="btn-3d-light group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-8 py-4 font-space-grotesk text-base font-bold md:px-10 md:py-5 md:text-lg">
                         <span className="relative z-10 text-[#1A4D3E]">Schedule Your Assessment</span>
-                        <span className="relative z-10 text-[#1A4D3E] transition-transform duration-300 group-hover:translate-x-2">→</span>
-                    </a>
-                    <a href="#buckets" className="rounded-2xl border border-white/10 px-8 py-4 font-space-grotesk text-sm font-bold text-white/50 transition-all hover:border-white/20 hover:text-white/70 md:px-10 md:py-5" style={{ backdropFilter: 'blur(12px)', background: 'rgba(255,255,255,0.03)' }}>
+                        <span className="relative z-10 text-[#1A4D3E] transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </button>
+                    <a href="#buckets" className="rounded-2xl border border-white/10 px-8 py-4 font-space-grotesk text-sm font-bold text-white/80 transition-all hover:border-white/20 hover:text-white/90 md:px-10 md:py-5" style={{ backdropFilter: 'blur(12px)', background: 'rgba(255,255,255,0.03)' }}>
                         Explore Tax Buckets
                     </a>
                 </div>
@@ -127,8 +129,8 @@ export default function TaxesHero() {
 
             {/* Scroll indicator */}
             <div className={`indexed-fade-rise absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 ${isLoaded ? '' : 'opacity-0'}`} style={{ animationDelay: '1.6s' }}>
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/15">Scroll</span>
-                <ChevronDown className="h-4 w-4 animate-bounce text-white/20" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Scroll</span>
+                <ChevronDown className="h-4 w-4 animate-bounce text-white/60" />
             </div>
         </section>
     )

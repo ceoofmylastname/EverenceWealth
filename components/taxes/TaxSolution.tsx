@@ -82,8 +82,8 @@ export default function TaxSolution() {
                             </defs>
                         </svg>
                     </h2>
-                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/40">
-                        <strong className="text-white/70">Pay taxes on the seed</strong> (small amount today) to ensure <strong className="text-white/70">the harvest</strong> (large amount tomorrow) is <strong className="text-emerald-400">tax-free</strong>.
+                    <p className="scroll-reveal mx-auto mt-8 max-w-2xl text-lg text-white/80">
+                        <strong className="text-white/90">Pay taxes on the seed</strong> (small amount today) to ensure <strong className="text-white/90">the harvest</strong> (large amount tomorrow) is <strong className="text-emerald-400">tax-free</strong>.
                     </p>
                 </div>
 
@@ -110,14 +110,14 @@ export default function TaxSolution() {
                                     <span className="indexed-icon-float text-3xl">{strategy.icon}</span>
                                 </div>
 
-                                <p className="mb-6 text-sm text-white/50">{strategy.description}</p>
+                                <p className="mb-6 text-sm text-white/80">{strategy.description}</p>
 
                                 {/* Benefits */}
                                 <div className="mb-6 space-y-2">
                                     {strategy.benefits.map((b) => (
                                         <div key={b} className="flex items-center gap-2 text-sm">
                                             <span className={`font-bold ${strategy.color}`}>✓</span>
-                                            <span className="text-white/60">{b}</span>
+                                            <span className="text-white/90">{b}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -125,7 +125,7 @@ export default function TaxSolution() {
                                 {/* Best For */}
                                 <div className="rounded-xl bg-white/[0.04] p-4" style={{ backdropFilter: 'blur(8px)' }}>
                                     <p className="text-[10px] font-bold uppercase tracking-wider text-white/25">Best For</p>
-                                    <p className="mt-1 text-xs text-white/50">{strategy.bestFor}</p>
+                                    <p className="mt-1 text-xs text-white/80">{strategy.bestFor}</p>
                                 </div>
                             </div>
                         </div>

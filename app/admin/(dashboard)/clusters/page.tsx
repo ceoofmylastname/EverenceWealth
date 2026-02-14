@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { Plus, Loader2, ArrowRight, Layout, Search, Filter } from 'lucide-react'
+import { Plus, Loader2, Layout, Search, Filter } from 'lucide-react'
 import Link from 'next/link'
 import { Database } from '@/types/database'
+import CreateClusterDialog from '@/components/admin/CreateClusterDialog'
 
 type Cluster = Database['public']['Tables']['clusters']['Row']
 
 export default function ClustersPage() {
     const [clusters, setClusters] = useState<Cluster[]>([])
     const [loading, setLoading] = useState(true)
+    const [dialogOpen, setDialogOpen] = useState(false)
     const supabase = createClient()
 
     useEffect(() => {
@@ -34,9 +36,10 @@ export default function ClustersPage() {
 
     const getStatusColor = (status: string | null) => {
         switch (status) {
-            case 'published': return 'bg-green-500/10 text-green-500 border-green-500/20'
+            case 'active': return 'bg-green-500/10 text-green-500 border-green-500/20'
             case 'generating': return 'bg-blue-500/10 text-blue-500 border-blue-500/20'
             case 'draft': return 'bg-gray-500/10 text-gray-400 border-gray-500/20'
+            case 'archived': return 'bg-orange-500/10 text-orange-400 border-orange-500/20'
             default: return 'bg-gray-500/10 text-gray-400'
         }
     }
@@ -48,13 +51,13 @@ export default function ClustersPage() {
                     <h2 className="text-3xl font-bold text-brand-gold">Blog Clusters</h2>
                     <p className="mt-1 text-sm text-gray-400">Manage your strategic content funnels.</p>
                 </div>
-                <Link
-                    href="/admin/clusters/new"
+                <button
+                    onClick={() => setDialogOpen(true)}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-[#020806] bg-brand-gold hover:bg-brand-gold/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gold focus:ring-offset-[#020806] transition-all"
                 >
                     <Plus className="h-4 w-4 mr-2" />
                     Create New Cluster
-                </Link>
+                </button>
             </div>
 
             {/* Filters */}
@@ -84,12 +87,12 @@ export default function ClustersPage() {
                     <Layout className="h-12 w-12 text-gray-600 mx-auto mb-4 opacity-50" />
                     <h3 className="text-lg font-medium text-white">No clusters yet</h3>
                     <p className="mt-1 text-gray-500 max-w-sm mx-auto">Get started by creating your first content cluster to implement the 3-2-1 funnel strategy.</p>
-                    <Link
-                        href="/admin/clusters/new"
+                    <button
+                        onClick={() => setDialogOpen(true)}
                         className="mt-6 inline-flex items-center px-4 py-2 border border-white/10 rounded-md text-sm font-medium text-brand-gold hover:bg-white/5 transition-colors"
                     >
                         Create Your First Cluster
-                    </Link>
+                    </button>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 gap-6">
@@ -161,16 +164,21 @@ export default function ClustersPage() {
                                     >
                                         View Funnel
                                     </Link>
-                                    <button className="flex items-center justify-center px-4 py-2 bg-brand-gold/10 hover:bg-brand-gold/20 border border-brand-gold/20 rounded-md text-sm font-medium text-brand-gold transition-colors">
-                                        Generate
-                                        <ArrowRight className="ml-2 h-3 w-3" />
-                                    </button>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
             )}
+
+            <CreateClusterDialog
+                open={dialogOpen}
+                onClose={() => setDialogOpen(false)}
+                onComplete={() => {
+                    setDialogOpen(false)
+                    fetchClusters()
+                }}
+            />
         </div>
     )
 }

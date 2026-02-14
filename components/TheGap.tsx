@@ -25,7 +25,7 @@ const GAPS = [
 
 const TheGap: React.FC = () => {
   return (
-    <section className="py-40 bg-light-gray relative overflow-hidden">
+    <section className="py-40 bg-gradient-to-b from-[#F9FAFB] via-white to-[#F9FAFB] relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24 scroll-reveal">
           <h2 className="font-space text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8">

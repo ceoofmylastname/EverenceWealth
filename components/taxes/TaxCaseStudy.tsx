@@ -21,7 +21,7 @@ export default function TaxCaseStudy() {
 
                 {/* Scenario */}
                 <div className="scroll-reveal mb-12 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 md:p-8" style={{ backdropFilter: 'blur(16px)' }}>
-                    <p className="mb-4 text-xs font-bold uppercase tracking-wider text-white/30">Scenario</p>
+                    <p className="mb-4 text-xs font-bold uppercase tracking-wider text-white/70">Scenario</p>
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
                         {[
                             { label: 'Age', value: '45' },
@@ -48,16 +48,16 @@ export default function TaxCaseStudy() {
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-sm text-white/40">Value at 65</span>
+                                    <span className="text-sm text-white/80">Value at 65</span>
                                     <span className="font-space-grotesk text-xl font-black text-white">$2,100,000</span>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-sm text-white/40">Tax (40% fed+state)</span>
+                                    <span className="text-sm text-white/80">Tax (40% fed+state)</span>
                                     <span className="font-space-grotesk text-xl font-black text-red-400">-$840,000</span>
                                 </div>
                                 <div className="border-t border-white/[0.08] pt-4">
                                     <div className="flex items-center justify-between">
-                                        <span className="text-sm font-bold text-white/60">Net After Tax</span>
+                                        <span className="text-sm font-bold text-white/90">Net After Tax</span>
                                         <span className="font-space-grotesk text-2xl font-black text-red-400">$1,260,000</span>
                                     </div>
                                 </div>
@@ -73,16 +73,16 @@ export default function TaxCaseStudy() {
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-sm text-white/40">Value at 65</span>
+                                    <span className="text-sm text-white/80">Value at 65</span>
                                     <span className="font-space-grotesk text-xl font-black text-white">$2,100,000</span>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-sm text-white/40">Tax owed</span>
+                                    <span className="text-sm text-white/80">Tax owed</span>
                                     <span className="font-space-grotesk text-xl font-black text-emerald-400">$0</span>
                                 </div>
                                 <div className="border-t border-white/[0.08] pt-4">
                                     <div className="flex items-center justify-between">
-                                        <span className="text-sm font-bold text-white/60">Net After Tax</span>
+                                        <span className="text-sm font-bold text-white/90">Net After Tax</span>
                                         <span className="indexed-gradient-text bg-clip-text font-space-grotesk text-2xl font-black text-transparent">$2,100,000</span>
                                     </div>
                                 </div>
@@ -93,12 +93,12 @@ export default function TaxCaseStudy() {
 
                 {/* Difference callout */}
                 <div className="scroll-reveal mt-12 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-[#1A4D3E]/20 p-8 text-center" style={{ backdropFilter: 'blur(16px)' }}>
-                    <p className="mb-2 text-sm font-bold text-white/40">The Difference</p>
+                    <p className="mb-2 text-sm font-bold text-white/80">The Difference</p>
                     <div className="indexed-gradient-text bg-clip-text font-space-grotesk text-5xl font-black text-transparent md:text-7xl">
                         $<CountUp end={840000} />
                     </div>
-                    <p className="mt-2 text-lg text-white/50">saved by repositioning to tax-exempt structure</p>
-                    <p className="mt-4 text-xs text-white/20">
+                    <p className="mt-2 text-lg text-white/80">saved by repositioning to tax-exempt structure</p>
+                    <p className="mt-4 text-xs text-white/60">
                         Assumptions for illustration. Actual results depend on market performance, tax rates, and individual circumstances.
                     </p>
                 </div>

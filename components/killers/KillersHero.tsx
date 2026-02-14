@@ -37,7 +37,7 @@ export default function KillersHero() {
             <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
                 {/* Eyebrow */}
                 <div className={`mb-8 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                    <span className="inline-block rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[10px] font-black uppercase tracking-[0.5em] text-white/50">
+                    <span className="inline-block rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[10px] font-black uppercase tracking-[0.5em] text-white/80">
                         The Truth Wall Street Won&apos;t Tell You
                     </span>
                 </div>
@@ -60,7 +60,7 @@ export default function KillersHero() {
                 </h1>
 
                 {/* Subheadline */}
-                <p className={`mx-auto mb-12 max-w-2xl text-lg text-white/60 transition-all delay-500 duration-1000 md:text-xl ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
+                <p className={`mx-auto mb-12 max-w-2xl text-lg text-white/90 transition-all delay-500 duration-1000 md:text-xl ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
                     The three silent forces eroding your retirement&mdash;
                     <br className="hidden md:inline" />
                     and why your advisor isn&apos;t talking about them
@@ -92,7 +92,7 @@ export default function KillersHero() {
             </div>
 
             {/* Scroll indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/70">
                 <ChevronDown className="h-6 w-6" />
             </div>
         </section>
