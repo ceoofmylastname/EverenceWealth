@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { LayoutDashboard, FileText, Share2, CircleHelp, AlertTriangle, Settings, LogOut } from 'lucide-react'
+import { LayoutDashboard, FileText, Share2, CircleHelp, AlertTriangle, Settings, LogOut, Users } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { clsx } from 'clsx'
 import { createClient } from '@/lib/supabase/client'
@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 
 const sidebarItems = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard, disabled: false },
+    { name: 'Advisors', href: '/admin/advisors', icon: Users, disabled: false },
     { name: 'Blog Posts', href: '/admin/blog', icon: FileText, disabled: true },
     { name: 'Clusters', href: '/admin/clusters', icon: Share2, disabled: false },
     { name: 'Q&A Pages', href: '/admin/qa', icon: CircleHelp, disabled: true },

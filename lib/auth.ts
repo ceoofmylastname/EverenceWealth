@@ -17,7 +17,7 @@ export interface UserProfile {
 export function getRoleDashboard(role: UserRole): string {
     switch (role) {
         case 'admin': return '/admin/dashboard'
-        case 'advisor': return '/advisor/dashboard'
+        case 'advisor': return '/agent/dashboard'
         case 'client': return '/portal/dashboard'
         default: return '/login'
     }
@@ -78,28 +78,32 @@ export async function updatePassword(newPassword: string) {
 }
 
 export async function detectRoleClient(userId: string): Promise<UserRole> {
-    const supabase = createClient()
+    try {
+        const supabase = createClient()
 
-    const { data: admin } = await supabase
-        .from('admin_users')
-        .select('id')
-        .eq('user_id', userId)
-        .single()
-    if (admin) return 'admin'
+        const { data: admin } = await supabase
+            .from('admin_users')
+            .select('id')
+            .eq('user_id', userId)
+            .single()
+        if (admin) return 'admin'
 
-    const { data: advisor } = await supabase
-        .from('advisors')
-        .select('id')
-        .eq('user_id', userId)
-        .single()
-    if (advisor) return 'advisor'
+        const { data: advisor } = await supabase
+            .from('advisors')
+            .select('id')
+            .eq('user_id', userId)
+            .single()
+        if (advisor) return 'advisor'
 
-    const { data: client } = await supabase
-        .from('clients')
-        .select('id')
-        .eq('user_id', userId)
-        .single()
-    if (client) return 'client'
+        const { data: client } = await supabase
+            .from('clients')
+            .select('id')
+            .eq('user_id', userId)
+            .single()
+        if (client) return 'client'
 
-    return null
+        return null
+    } catch {
+        return null
+    }
 }

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { signIn, detectRoleClient, getRoleDashboard } from '@/lib/auth'
+import { signIn } from '@/lib/auth'
 import toast from 'react-hot-toast'
 import { Loader2, Mail, Lock, Eye, EyeOff } from 'lucide-react'
 
@@ -27,14 +27,24 @@ export default function LoginForm() {
 
         setLoading(true)
         try {
-            const data = await signIn(email, password)
-            if (data.user) {
-                const role = await detectRoleClient(data.user.id)
-                const dashboard = getRoleDashboard(role)
-                toast.success('Signed in successfully')
-                router.push(dashboard)
-                router.refresh()
+            const { session } = await signIn(email, password)
+            // Ensure client record exists server-side (bypasses RLS)
+            const res = await fetch('/api/auth/ensure-client', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ access_token: session.access_token }),
+            })
+            const result = await res.json()
+
+            toast.success('Signed in successfully')
+            if (result.role === 'admin') {
+                router.push('/admin/dashboard')
+            } else if (result.role === 'advisor') {
+                router.push('/advisor/dashboard')
+            } else {
+                router.push('/portal/dashboard')
             }
+            router.refresh()
         } catch (err: any) {
             const message = err?.message || 'Failed to sign in'
             if (message.includes('Invalid login credentials')) {

@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState, useCallback } from 'react'
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { detectRoleClient, getRoleDashboard, type UserRole } from '@/lib/auth'
 import type { User, Session } from '@supabase/supabase-js'
@@ -37,20 +37,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         initialized: false,
     })
 
-    const supabase = createClient()
+    const supabaseRef = useRef(createClient())
 
     const refreshUser = useCallback(async () => {
-        const { data: { session } } = await supabase.auth.getSession()
-        if (session?.user) {
-            const role = await detectRoleClient(session.user.id)
-            setState({
-                user: session.user,
-                session,
-                role,
-                loading: false,
-                initialized: true,
-            })
-        } else {
+        try {
+            const { data: { session } } = await supabaseRef.current.auth.getSession()
+            if (session?.user) {
+                let role: UserRole = null
+                try {
+                    role = await detectRoleClient(session.user.id)
+                } catch {
+                    // Role detection may fail if tables don't exist yet
+                }
+                setState({
+                    user: session.user,
+                    session,
+                    role,
+                    loading: false,
+                    initialized: true,
+                })
+            } else {
+                setState({
+                    user: null,
+                    session: null,
+                    role: null,
+                    loading: false,
+                    initialized: true,
+                })
+            }
+        } catch {
             setState({
                 user: null,
                 session: null,
@@ -59,12 +74,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 initialized: true,
             })
         }
-    }, [supabase])
+    }, [])
 
     useEffect(() => {
         refreshUser()
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange(
+        const { data: { subscription } } = supabaseRef.current.auth.onAuthStateChange(
             async (event, session) => {
                 if (event === 'SIGNED_OUT') {
                     setState({
@@ -75,7 +90,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                         initialized: true,
                     })
                 } else if (session?.user) {
-                    const role = await detectRoleClient(session.user.id)
+                    let role: UserRole = null
+                    try {
+                        role = await detectRoleClient(session.user.id)
+                    } catch {
+                        // Role detection may fail if tables don't exist yet
+                    }
                     setState({
                         user: session.user,
                         session,
@@ -88,7 +108,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         )
 
         return () => subscription.unsubscribe()
-    }, [supabase, refreshUser])
+    }, [refreshUser])
 
     const dashboardUrl = getRoleDashboard(state.role)
 

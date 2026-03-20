@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import { organizationSchema, webSiteSchema, localBusinessSchema, JsonLd } from '@/lib/schema'
-import { AuthProvider } from '@/app/providers/auth-provider'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
@@ -25,9 +24,7 @@ export default function RootLayout({
                 <JsonLd data={organizationSchema()} />
                 <JsonLd data={webSiteSchema()} />
                 <JsonLd data={localBusinessSchema()} />
-                <AuthProvider>
-                    {children}
-                </AuthProvider>
+                {children}
                 <Toaster />
             </body>
         </html>

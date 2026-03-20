@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { signUp } from '@/lib/auth'
-import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { Loader2, Mail, Lock, Eye, EyeOff, User, Phone } from 'lucide-react'
 
@@ -51,14 +50,11 @@ export default function RegisterForm() {
             if (data.user && !data.session) {
                 setSuccess(true)
             } else if (data.user && data.session) {
-                const supabase = createClient()
-                await supabase.from('clients').insert({
-                    user_id: data.user.id,
-                    first_name: firstName.trim(),
-                    last_name: lastName.trim(),
-                    email: email.trim(),
-                    phone: phone.trim() || null,
-                    advisor_id: '00000000-0000-0000-0000-000000000000',
+                // Create client record server-side (bypasses RLS)
+                await fetch('/api/auth/ensure-client', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ access_token: data.session.access_token }),
                 })
                 toast.success('Account created successfully')
                 router.push('/portal/dashboard')

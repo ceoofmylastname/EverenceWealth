@@ -735,6 +735,177 @@ export interface Database {
                     attended?: boolean
                 }
             }
+            // ================================================
+            // CLIENT PORTAL TABLES (Migration 003)
+            // ================================================
+            policies: {
+                Row: {
+                    id: string
+                    client_id: string
+                    advisor_id: string | null
+                    policy_type: 'iul' | 'term_life' | 'whole_life' | 'disability' | 'ltc' | 'annuity'
+                    policy_number: string | null
+                    carrier: string | null
+                    coverage_amount: number
+                    premium_amount: number
+                    premium_frequency: 'monthly' | 'quarterly' | 'annual'
+                    status: 'active' | 'pending' | 'lapsed' | 'paid_up'
+                    issue_date: string | null
+                    next_payment_due: string | null
+                    cash_value: number
+                    death_benefit: number
+                    policy_document_url: string | null
+                    created_at: string
+                    updated_at: string
+                }
+                Insert: {
+                    id?: string
+                    client_id: string
+                    advisor_id?: string | null
+                    policy_type: 'iul' | 'term_life' | 'whole_life' | 'disability' | 'ltc' | 'annuity'
+                    policy_number?: string | null
+                    carrier?: string | null
+                    coverage_amount?: number
+                    premium_amount?: number
+                    premium_frequency?: 'monthly' | 'quarterly' | 'annual'
+                    status?: 'active' | 'pending' | 'lapsed' | 'paid_up'
+                    issue_date?: string | null
+                    next_payment_due?: string | null
+                    cash_value?: number
+                    death_benefit?: number
+                    policy_document_url?: string | null
+                }
+                Update: {
+                    client_id?: string
+                    advisor_id?: string | null
+                    policy_type?: 'iul' | 'term_life' | 'whole_life' | 'disability' | 'ltc' | 'annuity'
+                    policy_number?: string | null
+                    carrier?: string | null
+                    coverage_amount?: number
+                    premium_amount?: number
+                    premium_frequency?: 'monthly' | 'quarterly' | 'annual'
+                    status?: 'active' | 'pending' | 'lapsed' | 'paid_up'
+                    issue_date?: string | null
+                    next_payment_due?: string | null
+                    cash_value?: number
+                    death_benefit?: number
+                    policy_document_url?: string | null
+                    updated_at?: string
+                }
+            }
+            accounts: {
+                Row: {
+                    id: string
+                    client_id: string
+                    advisor_id: string | null
+                    account_type: 'iul_cash_value' | 'indexed_annuity' | 'brokerage' | 'ira' | 'roth_ira' | '401k'
+                    account_number: string | null
+                    tax_bucket: 'taxable' | 'tax_deferred' | 'tax_exempt'
+                    current_value: number
+                    contribution_ytd: number
+                    gain_loss_ytd: number
+                    status: 'active' | 'closed'
+                    created_at: string
+                    updated_at: string
+                }
+                Insert: {
+                    id?: string
+                    client_id: string
+                    advisor_id?: string | null
+                    account_type: 'iul_cash_value' | 'indexed_annuity' | 'brokerage' | 'ira' | 'roth_ira' | '401k'
+                    account_number?: string | null
+                    tax_bucket?: 'taxable' | 'tax_deferred' | 'tax_exempt'
+                    current_value?: number
+                    contribution_ytd?: number
+                    gain_loss_ytd?: number
+                    status?: 'active' | 'closed'
+                }
+                Update: {
+                    client_id?: string
+                    advisor_id?: string | null
+                    account_type?: 'iul_cash_value' | 'indexed_annuity' | 'brokerage' | 'ira' | 'roth_ira' | '401k'
+                    account_number?: string | null
+                    tax_bucket?: 'taxable' | 'tax_deferred' | 'tax_exempt'
+                    current_value?: number
+                    contribution_ytd?: number
+                    gain_loss_ytd?: number
+                    status?: 'active' | 'closed'
+                    updated_at?: string
+                }
+            }
+            document_vault: {
+                Row: {
+                    id: string
+                    client_id: string
+                    uploaded_by_type: 'advisor' | 'client' | 'admin'
+                    uploaded_by_id: string | null
+                    document_type: 'policy' | 'statement' | 'tax_form' | 'financial_plan' | 'other'
+                    file_name: string
+                    file_url: string
+                    file_size: number
+                    year: number | null
+                    description: string | null
+                    created_at: string
+                }
+                Insert: {
+                    id?: string
+                    client_id: string
+                    uploaded_by_type?: 'advisor' | 'client' | 'admin'
+                    uploaded_by_id?: string | null
+                    document_type?: 'policy' | 'statement' | 'tax_form' | 'financial_plan' | 'other'
+                    file_name: string
+                    file_url: string
+                    file_size?: number
+                    year?: number | null
+                    description?: string | null
+                }
+                Update: {
+                    client_id?: string
+                    uploaded_by_type?: 'advisor' | 'client' | 'admin'
+                    uploaded_by_id?: string | null
+                    document_type?: 'policy' | 'statement' | 'tax_form' | 'financial_plan' | 'other'
+                    file_name?: string
+                    file_url?: string
+                    file_size?: number
+                    year?: number | null
+                    description?: string | null
+                }
+            }
+            financial_health: {
+                Row: {
+                    id: string
+                    client_id: string
+                    health_score: number
+                    total_coverage: number
+                    total_assets: number
+                    total_premiums_annual: number
+                    emergency_fund_months: number
+                    debt_to_income_ratio: number
+                    last_calculated: string
+                    updated_at: string
+                }
+                Insert: {
+                    id?: string
+                    client_id: string
+                    health_score?: number
+                    total_coverage?: number
+                    total_assets?: number
+                    total_premiums_annual?: number
+                    emergency_fund_months?: number
+                    debt_to_income_ratio?: number
+                }
+                Update: {
+                    client_id?: string
+                    health_score?: number
+                    total_coverage?: number
+                    total_assets?: number
+                    total_premiums_annual?: number
+                    emergency_fund_months?: number
+                    debt_to_income_ratio?: number
+                    last_calculated?: string
+                    updated_at?: string
+                }
+            }
         }
         Functions: {
             increment_completed_articles: {
